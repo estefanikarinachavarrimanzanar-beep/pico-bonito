@@ -1,0 +1,664 @@
+<!doctype html>
+<html class="no-js" lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Hotel Y Restaurante - Blog</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+
+    <!-- CSS de la plantilla -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/gijgo.css">
+    <link rel="stylesheet" href="assets/css/slicknav.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/css/slick.css">
+    <link rel="stylesheet" href="assets/css/nice-select.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+    <!-- Personalización Estricta: Verde Oscuro Elegante, Dorado Degradado y Animaciones -->
+    <style>
+        :root {
+            --verde-elegante: #1b3b2b;
+            --verde-oscuro: #0d1f16;
+            --verde-suave: #244d38;
+            --dorado-gradiente: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
+            --dorado-solido: #d4af37;
+        }
+
+        body {
+            background-color: #f4f6f4 !important;
+            overflow-x: hidden;
+        }
+
+        /* Animaciones e Interacción */
+        .blog_item, .blog_right_sidebar aside {
+            transition: transform 0.4s ease, box-shadow 0.4s ease !important;
+        }
+
+        .blog_item:hover {
+            transform: translateY(-5px) !important;
+            box-shadow: 0 10px 25px rgba(13, 31, 22, 0.15) !important;
+        }
+
+        .blog_item_img img {
+            transition: transform 0.6s ease !important;
+        }
+
+        .blog_item:hover .blog_item_img img {
+            transform: scale(1.05) !important;
+        }
+
+        /* Header y Menú de Navegación */
+        .header-area, .header-sticky, .main-header {
+            background-color: var(--verde-elegante) !important;
+            border-bottom: 3px solid var(--dorado-solido) !important;
+        }
+
+        .main-menu ul li a {
+            color: #ffffff !important;
+            font-weight: 600 !important;
+            transition: color 0.3s ease !important;
+        }
+
+        .main-menu ul li:hover > a {
+            color: var(--dorado-solido) !important;
+        }
+
+        .main-menu ul li .submenu {
+            background-color: var(--verde-elegante) !important;
+            border-top: 3px solid var(--dorado-solido) !important;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3) !important;
+        }
+
+        .main-menu ul li .submenu li a {
+            color: #ffffff !important;
+        }
+
+        .main-menu ul li .submenu li a:hover {
+            color: var(--dorado-solido) !important;
+            background-color: var(--verde-oscuro) !important;
+            padding-left: 20px !important;
+        }
+
+        /* Botones con Degradado Dorado */
+        .btn, .btn1, .boxed-btn, .button, .btn_1 {
+            background: var(--dorado-gradiente) !important;
+            color: #1a1a1a !important;
+            border: none !important;
+            font-weight: 700 !important;
+            text-transform: uppercase !important;
+            transition: all 0.3s ease !important;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .btn:hover, .btn1:hover, .boxed-btn:hover, .button:hover {
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5) !important;
+            transform: translateY(-3px) !important;
+            color: #000000 !important;
+        }
+
+        .header-btn .btn1 {
+            padding: 12px 20px !important;
+            white-space: nowrap !important;
+            font-size: 13px !important;
+            line-height: 1 !important;
+        }
+
+        /* Banner Hero Corto */
+        .slider-area .single-slider.hero-overly {
+            position: relative;
+        }
+
+        .slider-area .single-slider.hero-overly::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(13, 31, 22, 0.65);
+            z-index: 1;
+        }
+
+        .hero-caption {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-caption h2 {
+            color: #ffffff !important;
+            font-weight: 800 !important;
+        }
+
+        .hero-caption span {
+            color: var(--dorado-solido) !important;
+            font-weight: 700 !important;
+            text-transform: uppercase !important;
+        }
+
+        /* Blog Items */
+        .blog_item_date {
+            background: var(--verde-elegante) !important;
+            color: var(--dorado-solido) !important;
+            border: 1px solid var(--dorado-solido) !important;
+        }
+
+        .blog_details h2 {
+            color: var(--verde-elegante) !important;
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+
+        .blog_details h2:hover {
+            color: var(--dorado-solido) !important;
+        }
+
+        .blog-info-link li a {
+            color: var(--verde-suave) !important;
+        }
+
+        .blog-info-link li a i {
+            color: var(--dorado-solido) !important;
+        }
+
+        /* Paginación */
+        .blog-pagination .page-link {
+            color: var(--verde-elegante) !important;
+            border-color: rgba(27, 59, 43, 0.2) !important;
+        }
+
+        .blog-pagination .page-item.active .page-link,
+        .blog-pagination .page-link:hover {
+            background: var(--dorado-gradiente) !important;
+            color: #1a1a1a !important;
+            border-color: var(--dorado-solido) !important;
+        }
+
+        /* Sidebar Widgets */
+        .blog_right_sidebar .widget_title {
+            background: var(--verde-elegante) !important;
+            color: var(--dorado-solido) !important;
+            border-bottom: 2px solid var(--dorado-solido) !important;
+            padding: 12px 20px;
+            border-radius: 4px;
+        }
+
+        .cat-list li a:hover {
+            color: var(--dorado-solido) !important;
+        }
+
+        .tag_cloud_widget ul li a:hover {
+            background: var(--dorado-gradiente) !important;
+            color: #1a1a1a !important;
+        }
+
+        /* Pie de Página (Footer) */
+        .footer-area.black-bg {
+            background-color: var(--verde-oscuro) !important;
+            border-top: 4px solid var(--dorado-solido) !important;
+        }
+
+        .footer-tittle h4 {
+            color: var(--dorado-solido) !important;
+        }
+
+        .footer-pera p, .footer-tittle ul li a {
+            color: #e0e0e0 !important;
+        }
+
+        .footer-tittle ul li a:hover {
+            color: var(--dorado-solido) !important;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <!-- Preloader -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <strong>Hotel</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <!-- Encabezado Principal -->
+        <div class="header-area header-sticky">
+            <div class="main-header ">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <!-- logo -->
+                        <div class="col-xl-2 col-lg-2">
+                            <div class="logo">
+                                <a href="index.html"><img src="imagenes hotel/hotel.jpg" alt="Logo Hotel" style="max-height: 50px;"></a>
+                            </div>
+                        </div>
+                    <div class="col-xl-8 col-lg-8">
+                            <!-- Menú de navegación -->
+                            <div class="main-menu f-right d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">                                                                                                                                     
+                                        <li><a href="index.html">Inicio</a></li>
+                                        <li><a href="about.html">Nosotros</a></li>
+                                        <li><a href="services.html">Servicios</a></li>
+                                        <li><a href="blog.html">Blog</a>
+                                            <ul class="submenu">
+                                                <li><a href="blog.html">Blog</a></li>
+                                                <li><a href="single-blog.html">Detalles del Blog</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Páginas</a>
+                                            <ul class="submenu">
+                                                <li><a href="rooms.html">Habitaciones</a></li>
+                                                <li><a href="elements.html">Elementos</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="contact.html">Contacto</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>             
+                        <div class="col-xl-2 col-lg-2">
+                            <div class="header-btn text-right">
+                                <a href="contact.html" class="btn btn1 d-none d-lg-inline-flex">Reservar En Línea</a>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Banner Principal Corto -->
+    <div class="slider-area">
+        <div class="single-slider hero-overly slider-height2 d-flex align-items-center" data-background="imagenes hotel/hotel.jpg" style="background-image: url('imagenes hotel/hotel.jpg'); background-size: cover; background-position: center;">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-md-11 offset-xl-1 offset-lg-1 offset-md-1">
+                        <div class="hero-caption">
+                            <span>Blog</span>
+                            <h2>Nuestro Blog</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!--================ Área del Blog =================-->
+    <section class="blog_area section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mb-5 mb-lg-0">
+                    <div class="blog_left_sidebar">
+                        <article class="blog_item wow fadeInUp" data-wow-duration="1s">
+                            <div class="blog_item_img">
+                                <img class="card-img rounded-0" src="cabana3.jpeg" alt="Blog 1">
+                                <a href="#" class="blog_item_date">
+                                    <h3>15</h3>
+                                    <p>Ene</p>
+                                </a>
+                            </div>
+
+                            <div class="blog_details">
+                                <a class="d-inline-block" href="single-blog.html">
+                                    <h2>Descubre la serenidad única de nuestras cabañas exclusivas</h2>
+                                </a>
+                                <p>Rodeado de frondosa naturaleza y aire puro en Pico Bonito, te ofrecemos el lugar perfecto para desconectar de la rutina y reconectar con lo esencial.</p>
+                                <ul class="blog-info-link">
+                                    <li><a href="#"><i class="fa fa-user"></i> Viajes, Estilo de Vida</a></li>
+                                    <li><a href="#"><i class="fa fa-comments"></i> 03 Comentarios</a></li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <article class="blog_item wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
+                            <div class="blog_item_img">
+                                <img class="card-img rounded-0" src="imagenes hotel/experiencia 2.jpg" alt="Blog 2">
+                                <a href="#" class="blog_item_date">
+                                    <h3>18</h3>
+                                    <p>Ene</p>
+                                </a>
+                            </div>
+
+                            <div class="blog_details">
+                                <a class="d-inline-block" href="single-blog.html">
+                                    <h2>Rutas ecoturísticas y aventuras en la montaña</h2>
+                                </a>
+                                <p>Explora senderos naturales, cascadas cristalinas y avistamiento de aves en una experiencia inolvidable guiada por expertos locales.</p>
+                                <ul class="blog-info-link">
+                                    <li><a href="#"><i class="fa fa-user"></i> Aventura, Naturaleza</a></li>
+                                    <li><a href="#"><i class="fa fa-comments"></i> 05 Comentarios</a></li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <article class="blog_item wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
+                            <div class="blog_item_img">
+                                <img class="card-img rounded-0" src="imagenes hotel/comida.jpg" alt="Blog 3">
+                                <a href="#" class="blog_item_date">
+                                    <h3>22</h3>
+                                    <p>Ene</p>
+                                </a>
+                            </div>
+
+                            <div class="blog_details">
+                                <a class="d-inline-block" href="single-blog.html">
+                                    <h2>Sabores auténticos en nuestro restaurante gourmet</h2>
+                                </a>
+                                <p>Deléitate con platillos que combinan la gastronomía tradicional e ingredientes locales frescos para ofrecerte una experiencia única.</p>
+                                <ul class="blog-info-link">
+                                    <li><a href="#"><i class="fa fa-user"></i> Gastronomía, Restaurante</a></li>
+                                    <li><a href="#"><i class="fa fa-comments"></i> 02 Comentarios</a></li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <article class="blog_item wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
+                            <div class="blog_item_img">
+                                <img class="card-img rounded-0" src="spa.jpeg" alt="Blog 4">
+                                <a href="#" class="blog_item_date">
+                                    <h3>28</h3>
+                                    <p>Ene</p>
+                                </a>
+                            </div>
+
+                            <div class="blog_details">
+                                <a class="d-inline-block" href="single-blog.html">
+                                    <h2>Relajación total en nuestro centro de spa y bienestar</h2>
+                                </a>
+                                <p>Regálate un día de masajes revitalizantes y tratamientos corporales en un entorno rodeado de la brisa del bosque tropical.</p>
+                                <ul class="blog-info-link">
+                                    <li><a href="#"><i class="fa fa-user"></i> Bienestar, Spa</a></li>
+                                    <li><a href="#"><i class="fa fa-comments"></i> 04 Comentarios</a></li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <article class="blog_item wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
+                            <div class="blog_item_img">
+                                <img class="card-img rounded-0" src="imagenes hotel/catarata.jpg" alt="Blog 5">
+                                <a href="#" class="blog_item_date">
+                                    <h3>02</h3>
+                                    <p>Feb</p>
+                                </a>
+                            </div>
+
+                            <div class="blog_details">
+                                <a class="d-inline-block" href="single-blog.html">
+                                    <h2>Las mejores cascadas de la región que debes visitar</h2>
+                                </a>
+                                <p>Descubre los rincones naturales más impresionantes de Pico Bonito durante tu estancia en nuestro resort.</p>
+                                <ul class="blog-info-link">
+                                    <li><a href="#"><i class="fa fa-user"></i> Turístico, Destinos</a></li>
+                                    <li><a href="#"><i class="fa fa-comments"></i> 06 Comentarios</a></li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <nav class="blog-pagination justify-content-center d-flex">
+                            <ul class="pagination">
+                                <li class="page-item">
+                                    <a href="#" class="page-link" aria-label="Anterior">
+                                        <i class="ti-angle-left"></i>
+                                    </a>
+                                </li>
+                                <li class="page-item active">
+                                    <a href="#" class="page-link">1</a>
+                                </li>
+                                <li class="page-item">
+                                    <a href="#" class="page-link">2</a>
+                                </li>
+                                <li class="page-item">
+                                    <a href="#" class="page-link" aria-label="Siguiente">
+                                        <i class="ti-angle-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="blog_right_sidebar">
+                        <aside class="single_sidebar_widget search_widget wow fadeInRight" data-wow-duration="1s">
+                            <form action="#">
+                                <div class="form-group">
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" placeholder='Buscar palabra clave'
+                                            onfocus="this.placeholder = ''"
+                                            onblur="this.placeholder = 'Buscar palabra clave'">
+                                        <div class="input-group-append">
+                                            <button class="btn" type="button"><i class="ti-search"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
+                                    type="submit">Buscar</button>
+                            </form>
+                        </aside>
+
+                        <aside class="single_sidebar_widget post_category_widget wow fadeInRight" data-wow-duration="1s" data-wow-delay=".2s">
+                            <h4 class="widget_title">Categorías</h4>
+                            <ul class="list cat-list">
+                                <li>
+                                    <a href="#" class="d-flex">
+                                        <p>Comida y Restaurante</p>
+                                        <p>(37)</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="d-flex">
+                                        <p>Noticias de Viajes</p>
+                                        <p>(10)</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="d-flex">
+                                        <p>Naturaleza y Cabañas</p>
+                                        <p>(03)</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="d-flex">
+                                        <p>Servicios y Spa</p>
+                                        <p>(11)</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="d-flex">
+                                        <p>Inspiración</p>
+                                        <p>(21)</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </aside>
+
+                        <aside class="single_sidebar_widget popular_post_widget wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s">
+                            <h3 class="widget_title">Publicaciones Recientes</h3>
+                            <div class="media post_item">
+                                <img src="cabana2.jpeg" alt="post" style="width: 80px; height: 80px; object-fit: cover;">
+                                <div class="media-body">
+                                    <a href="single-blog.html">
+                                        <h3>Noche romántica en las cabañas...</h3>
+                                    </a>
+                                    <p>12 de Enero, 2026</p>
+                                </div>
+                            </div>
+                            <div class="media post_item">
+                                <img src="imagenes hotel/experiencia 2.jpg" alt="post" style="width: 80px; height: 80px; object-fit: cover;">
+                                <div class="media-body">
+                                    <a href="single-blog.html">
+                                        <h3>Las mejores cascadas de la zona</h3>
+                                    </a>
+                                    <p>Hace 2 horas</p>
+                                </div>
+                            </div>
+                            <div class="media post_item">
+                                <img src="comida.jpg" alt="post" style="width: 80px; height: 80px; object-fit: cover;">
+                                <div class="media-body">
+                                    <a href="single-blog.html">
+                                        <h3>Gastronomía típica hondureña</h3>
+                                    </a>
+                                    <p>Hace 3 horas</p>
+                                </div>
+                            </div>
+                        </aside>
+
+                        <aside class="single_sidebar_widget tag_cloud_widget wow fadeInRight" data-wow-duration="1s" data-wow-delay=".4s">
+                            <h4 class="widget_title">Etiquetas</h4>
+                            <ul class="list">
+                                <li><a href="#">cabañas</a></li>
+                                <li><a href="#">piscina</a></li>
+                                <li><a href="#">restaurante</a></li>
+                                <li><a href="#">naturaleza</a></li>
+                                <li><a href="#">honduras</a></li>
+                                <li><a href="#">estilo de vida</a></li>
+                                <li><a href="#">relax</a></li>
+                            </ul>
+                        </aside>
+
+                        <aside class="single_sidebar_widget instagram_feeds wow fadeInRight" data-wow-duration="1s" data-wow-delay=".5s">
+                            <h4 class="widget_title">Galería Instagram</h4>
+                            <ul class="instagram_row flex-wrap">
+                                <li><a href="#"><img class="img-fluid" src="imagenes hotel/ave.jpg" alt="" style="width: 80px; height: 80px; object-fit: cover;"></a></li>
+                                <li><a href="#"><img class="img-fluid" src="imagenes hotel/catarata.jpg" alt="" style="width: 80px; height: 80px; object-fit: cover;"></a></li>
+                                <li><a href="#"><img class="img-fluid" src="imagenes hotel/senderismo.jpg" alt="" style="width: 80px; height: 80px; object-fit: cover;"></a></li>
+                                <li><a href="#"><img class="img-fluid" src="imagenes hotel/spa.jpeg" alt="" style="width: 80px; height: 80px; object-fit: cover;"></a></li>
+                            </ul>
+                        </aside>
+
+                        <aside class="single_sidebar_widget newsletter_widget wow fadeInRight" data-wow-duration="1s" data-wow-delay=".6s">
+                            <h4 class="widget_title">Boletín Informativo</h4>
+                            <form action="#">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" onfocus="this.placeholder = ''"
+                                        onblur="this.placeholder = 'Ingresa tu correo'" placeholder='Ingresa tu correo' required>
+                                </div>
+                                <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
+                                    type="submit">Suscribirse</button>
+                            </form>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================ Fin del Área del Blog =================-->
+
+    <footer>
+        <!-- Pie de Página -->
+        <div class="footer-area black-bg footer-padding">
+            <div class="container">
+                <div class="row d-flex justify-content-between">
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                       <div class="single-footer-caption mb-30">
+                          <div class="footer-logo">
+                            <a href="index.html"><img src="imagenes hotel/hotel.jpg" alt="Logo Footer" style="max-height: 40px;"></a>
+                          </div>
+                          <div class="footer-social footer-social2">
+                              <a href="#"><i class="fab fa-facebook-f"></i></a>
+                              <a href="#"><i class="fab fa-twitter"></i></a>
+                              <a href="#"><i class="fas fa-globe"></i></a>
+                              <a href="#"><i class="fab fa-behance"></i></a>
+                          </div>
+                          <div class="footer-pera">
+                               <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos los derechos reservados | Diseñado con estilo elegante</p>
+                          </div>
+                       </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-5">
+                        <div class="single-footer-caption mb-30">
+                            <div class="footer-tittle">
+                                <h4>Enlaces Rápidos</h4>
+                                <ul>
+                                    <li><a href="about.html">Sobre Nosotros</a></li>
+                                    <li><a href="rooms.html">Nuestras Cabañas</a></li>
+                                    <li><a href="services.html">Servicios y Piscina</a></li>
+                                    <li><a href="contact.html">Contacto</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
+                        <div class="single-footer-caption mb-30">
+                            <div class="footer-tittle">
+                                <h4>Reservaciones</h4>
+                                <ul>
+                                    <li><a href="#">Tel: +504 9999-9999</a></li>
+                                    <li><a href="#">Skype: hotelbooking</a></li>
+                                    <li><a href="#">reservaciones@hotel.com</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
+                        <div class="single-footer-caption mb-30">
+                            <div class="footer-tittle">
+                                <h4>Nuestra Ubicación</h4>
+                                <ul>
+                                    <li><a href="#">Pico Bonito, La Ceiba</a></li>
+                                    <li><a href="#">Honduras, Centroamérica</a></li>
+                                </ul>
+                                 <div class="footer-form">
+                                     <div id="mc_embed_signup">
+                                         <form target="_blank" action="#" method="get" class="subscribe_form relative mail_part">
+                                             <input type="email" name="email" id="newsletter-form-email" placeholder="Correo electrónico" class="placeholder hide-on-focus" onfocus="this.placeholder = ''" onblur="this.placeholder = ' Correo electrónico '">
+                                             <div class="form-icon">
+                                               <button type="submit" name="submit" id="newsletter-submit" class="email_icon newsletter-submit button-contactForm"><img src="assets/img/logo/form-iocn.jpg" alt="Icono"></button>
+                                             </div>
+                                             <div class="mt-10 info"></div>
+                                         </form>
+                                     </div>
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts de Funcionalidad y Animaciones -->
+    <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="./assets/js/popper.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/jquery.slicknav.min.js"></script>
+    <script src="./assets/js/owl.carousel.min.js"></script>
+    <script src="./assets/js/slick.min.js"></script>
+    <script src="./assets/js/gijgo.min.js"></script>
+    <script src="./assets/js/wow.min.js"></script>
+    <script src="./assets/js/animated.headline.js"></script>
+    <script src="./assets/js/jquery.magnific-popup.js"></script>
+    <script src="./assets/js/jquery.scrollUp.min.js"></script>
+    <script src="./assets/js/jquery.nice-select.min.js"></script>
+    <script src="./assets/js/jquery.sticky.js"></script>
+    <script src="./assets/js/contact.js"></script>
+    <script src="./assets/js/jquery.form.js"></script>
+    <script src="./assets/js/jquery.validate.min.js"></script>
+    <script src="./assets/js/mail-script.js"></script>
+    <script src="./assets/js/jquery.ajaxchimp.min.js"></script>
+    <script src="./assets/js/plugins.js"></script>
+    <script src="./assets/js/main.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+            new WOW().init();
+        });
+    </script>
+</body>
+</html>
