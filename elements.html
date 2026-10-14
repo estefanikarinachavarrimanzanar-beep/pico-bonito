@@ -1,0 +1,740 @@
+<!doctype html>
+<html class="no-js" lang="es">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Hotel Y Restaurante - Elementos</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+
+	<!-- CSS de la plantilla -->
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="assets/css/gijgo.css">
+	<link rel="stylesheet" href="assets/css/slicknav.css">
+	<link rel="stylesheet" href="assets/css/animate.min.css">
+	<link rel="stylesheet" href="assets/css/magnific-popup.css">
+	<link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+	<link rel="stylesheet" href="assets/css/themify-icons.css">
+	<link rel="stylesheet" href="assets/css/slick.css">
+	<link rel="stylesheet" href="assets/css/nice-select.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/responsive.css">
+
+	<!-- Personalización Estricta: Verde Oscuro Elegante, Dorado Degradado y Animaciones -->
+	<style>
+		:root {
+			--verde-elegante: #1b3b2b;
+			--verde-oscuro: #0d1f16;
+			--verde-suave: #244d38;
+			--dorado-gradiente: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
+			--dorado-solido: #d4af37;
+		}
+
+		body {
+			background-color: #f4f6f4 !important;
+			overflow-x: hidden;
+		}
+
+		/* --- Centrado perfecto y sin deformación de botones generales --- */
+		.button-group-area .genric-btn {
+			display: inline-flex !important;
+			align-items: center !important;
+			justify-content: center !important;
+			text-align: center !important;
+			margin-bottom: 10px;
+		}
+
+		/* Animaciones e Interacción */
+		.section-top-border, .sample-text-area, .button-area {
+			transition: transform 0.4s ease, box-shadow 0.4s ease !important;
+		}
+
+		/* Header y Menú */
+		.header-area, .header-sticky, .main-header {
+			background-color: var(--verde-elegante) !important;
+			border-bottom: 3px solid var(--dorado-solido) !important;
+		}
+
+		.main-menu ul li a {
+			color: #ffffff !important;
+			font-weight: 600 !important;
+			transition: color 0.3s ease !important;
+		}
+
+		.main-menu ul li:hover > a {
+			color: var(--dorado-solido) !important;
+		}
+
+		.main-menu ul li .submenu {
+			background-color: var(--verde-elegante) !important;
+			border-top: 3px solid var(--dorado-solido) !important;
+			box-shadow: 0 10px 20px rgba(0,0,0,0.3) !important;
+		}
+
+		.main-menu ul li .submenu li a {
+			color: #ffffff !important;
+		}
+
+		.main-menu ul li .submenu li a:hover {
+			color: var(--dorado-solido) !important;
+			background-color: var(--verde-oscuro) !important;
+			padding-left: 20px !important;
+		}
+
+		/* Botón Específico de Reservar en el Header con Degradado Dorado */
+		.header-btn .btn1 {
+			background: var(--dorado-gradiente) !important;
+			color: #1a1a1a !important;
+			border: none !important;
+			font-weight: 700 !important;
+			text-transform: uppercase !important;
+			transition: all 0.3s ease !important;
+			box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+			display: inline-flex !important;
+			align-items: center !important;
+			justify-content: center !important;
+			padding: 10px 20px !important;
+			white-space: nowrap !important;
+			font-size: 13px !important;
+			line-height: 1 !important;
+		}
+
+		.header-btn .btn1:hover {
+			box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5) !important;
+			transform: translateY(-3px) !important;
+			color: #000000 !important;
+		}
+
+		/* Botones de la sección de Muestra (Genric-btn) */
+		.genric-btn.primary, .genric-btn.success, .genric-btn.info, .genric-btn.warning, .genric-btn.danger {
+			background: var(--dorado-gradiente) !important;
+			color: #1a1a1a !important;
+			border: none !important;
+			font-weight: 700 !important;
+			transition: all 0.3s ease !important;
+		}
+
+		.genric-btn:hover {
+			transform: translateY(-2px) !important;
+		}
+
+		.genric-btn.primary-border, .genric-btn.success-border, .genric-btn.info-border, .genric-btn.warning-border, .genric-btn.danger-border {
+			border: 2px solid var(--dorado-solido) !important;
+			color: var(--verde-elegante) !important;
+		}
+
+		.genric-btn.primary-border:hover, .genric-btn.success-border:hover {
+			background: var(--verde-elegante) !important;
+			color: var(--dorado-solido) !important;
+		}
+
+		/* Banner Principal Corto */
+		.slider-area .single-slider.hero-overly {
+			position: relative;
+		}
+
+		.slider-area .single-slider.hero-overly::before {
+			content: "";
+			position: absolute;
+			top: 0; left: 0; width: 100%; height: 100%;
+			background: rgba(13, 31, 22, 0.65);
+			z-index: 1;
+		}
+
+		.hero-caption {
+			position: relative;
+			z-index: 2;
+		}
+
+		.hero-caption h2 {
+			color: #ffffff !important;
+			font-weight: 800 !important;
+		}
+
+		.hero-caption span {
+			color: var(--dorado-solido) !important;
+			font-weight: 700 !important;
+			text-transform: uppercase !important;
+		}
+
+		/* Títulos y Elementos */
+		.text-heading, .section-top-border h3, .single-defination h4 {
+			color: var(--verde-elegante) !important;
+			font-weight: 700;
+		}
+
+		.generic-blockquote {
+			background-color: var(--verde-oscuro) !important;
+			border-left: 4px solid var(--dorado-solido) !important;
+			color: #fcf6ba !important;
+			padding: 25px !important;
+			border-radius: 6px;
+			font-style: italic;
+		}
+
+		/* Tabla */
+		.progress-table {
+			background-color: #ffffff !important;
+			border: 1px solid rgba(27, 59, 43, 0.15);
+			border-radius: 8px;
+		}
+
+		.progress-table .table-head {
+			background-color: var(--verde-elegante) !important;
+			color: var(--dorado-solido) !important;
+			font-weight: bold;
+		}
+
+		.progress-bar {
+			background: var(--dorado-gradiente) !important;
+		}
+
+		/* Formularios e Inputs */
+		.single-input, .single-textarea, .single-input-primary, .single-input-accent, .single-input-secondary {
+			border: 1px solid rgba(27, 59, 43, 0.3) !important;
+			border-radius: 4px;
+		}
+
+		.single-input:focus, .single-textarea:focus {
+			border-color: var(--dorado-solido) !important;
+		}
+
+		/* Switches, Checkboxes, Radios */
+		.primary-switch input:checked + label, 
+		.confirm-switch input:checked + label,
+		.primary-checkbox input:checked + label,
+		.confirm-checkbox input:checked + label,
+		.primary-radio input:checked + label,
+		.confirm-radio input:checked + label {
+			background-color: var(--verde-elegante) !important;
+			border-color: var(--dorado-solido) !important;
+		}
+
+		/* Pie de Página (Footer) */
+		.footer-area.black-bg {
+			background-color: var(--verde-oscuro) !important;
+			border-top: 4px solid var(--dorado-solido) !important;
+		}
+
+		.footer-tittle h4 {
+			color: var(--dorado-solido) !important;
+		}
+
+		.footer-pera p, .footer-tittle ul li a {
+			color: #e0e0e0 !important;
+		}
+
+		.footer-tittle ul li a:hover {
+			color: var(--dorado-solido) !important;
+		}
+	</style>
+</head>
+
+<body>
+	
+    <!-- Preloader -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <strong>Hotel</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+	
+    <header>
+        <!-- Encabezado Principal -->
+       <div class="header-area header-sticky">
+            <div class="main-header ">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <!-- logo -->
+                        <div class="col-xl-2 col-lg-2">
+                            <div class="logo">
+                               <a href="index.html"><img src="imagenes hotel/hotel.jpg" alt="Logo Hotel" style="max-height: 50px;"></a>
+                            </div>
+                        </div>
+                    <div class="col-xl-8 col-lg-8">
+                            <!-- Menú de navegación -->
+                            <div class="main-menu f-right d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">                                                                                                                                     
+                                        <li><a href="index.html">Inicio</a></li>
+                                        <li><a href="about.html">Nosotros</a></li>
+                                        <li><a href="services.html">Servicios</a></li>
+                                        <li><a href="blog.html">Blog</a>
+                                            <ul class="submenu">
+                                                <li><a href="blog.html">Blog</a></li>
+                                                <li><a href="single-blog.html">Detalles del Blog</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Páginas</a>
+                                            <ul class="submenu">
+                                                <li><a href="rooms.html">Habitaciones</a></li>
+                                                <li><a href="elements.html">Elementos</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="contact.html">Contacto</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>             
+                        <div class="col-xl-2 col-lg-2">
+                            <div class="header-btn text-right">
+                                <a href="contact.html" class="btn btn1 d-none d-lg-inline-flex">Reservar En Línea</a>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       </div>
+	</header>
+	
+    <!-- Banner Principal Corto -->
+    <div class="slider-area">
+        <div class="single-slider hero-overly slider-height2 d-flex align-items-center" data-background="imagenes hotel/hotel.jpg" style="background-image: url('imagenes hotel/hotel.jpg'); background-size: cover; background-position: center;">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-md-11 offset-xl-1 offset-lg-1 offset-md-1">
+                        <div class="hero-caption">
+                            <span>Elementos</span>
+                            <h2>Nuestros Elementos</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	<!-- Área de Ejemplo de Texto -->
+	<section class="sample-text-area wow fadeInUp" data-wow-duration="1s">
+		<div class="container box_1170">
+			<h3 class="text-heading">Muestra de Texto</h3>
+			<p class="sample-text">
+				Cada viajero apasionado sueña con experimentar un descanso en medio de la naturaleza, o realizar una escapada para reconectar con el confort y la elegancia. Muchos buscan sorprenderse con paisajes únicos y experiencias inolvidables. Al hospedarte con nosotros, descubrirás la armonía perfecta entre diseño exclusivo, gastronomía gourmet y un servicio de hospitalidad de clase mundial. Olvídate del estrés cotidiano y sumérgete en una Experiencia inolvidable en nuestras exclusivas instalaciones.
+			</p>
+		</div>
+	</section>
+
+	<!-- Área de Botones -->
+	<section class="button-area wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
+		<div class="container box_1170 border-top-generic">
+			<h3 class="text-heading">Muestra de Botones</h3>
+			<div class="button-group-area">
+				<a href="#" class="genric-btn default">Por Defecto</a>
+				<a href="#" class="genric-btn primary">Primario</a>
+				<a href="#" class="genric-btn success">Éxito</a>
+				<a href="#" class="genric-btn info">Información</a>
+				<a href="#" class="genric-btn warning">Advertencia</a>
+				<a href="#" class="genric-btn danger">Peligro</a>
+				<a href="#" class="genric-btn link">Enlace</a>
+				<a href="#" class="genric-btn disable">Deshabilitado</a>
+			</div>
+			<div class="button-group-area mt-10">
+				<a href="#" class="genric-btn default-border">Por Defecto</a>
+				<a href="#" class="genric-btn primary-border">Primario</a>
+				<a href="#" class="genric-btn success-border">Éxito</a>
+				<a href="#" class="genric-btn info-border">Información</a>
+				<a href="#" class="genric-btn warning-border">Advertencia</a>
+				<a href="#" class="genric-btn danger-border">Peligro</a>
+				<a href="#" class="genric-btn link-border">Enlace</a>
+				<a href="#" class="genric-btn disable">Deshabilitado</a>
+			</div>
+			<div class="button-group-area mt-40">
+				<a href="#" class="genric-btn default radius">Por Defecto</a>
+				<a href="#" class="genric-btn primary radius">Primario</a>
+				<a href="#" class="genric-btn success radius">Éxito</a>
+				<a href="#" class="genric-btn info radius">Información</a>
+				<a href="#" class="genric-btn warning radius">Advertencia</a>
+				<a href="#" class="genric-btn danger radius">Peligro</a>
+				<a href="#" class="genric-btn link radius">Enlace</a>
+				<a href="#" class="genric-btn disable radius">Deshabilitado</a>
+			</div>
+			<div class="button-group-area mt-10">
+				<a href="#" class="genric-btn default-border radius">Por Defecto</a>
+				<a href="#" class="genric-btn primary-border radius">Primario</a>
+				<a href="#" class="genric-btn success-border radius">Éxito</a>
+				<a href="#" class="genric-btn info-border radius">Información</a>
+				<a href="#" class="genric-btn warning-border radius">Advertencia</a>
+				<a href="#" class="genric-btn danger-border radius">Peligro</a>
+				<a href="#" class="genric-btn link-border radius">Enlace</a>
+				<a href="#" class="genric-btn disable radius">Deshabilitado</a>
+			</div>
+			<div class="button-group-area mt-40">
+				<a href="#" class="genric-btn default circle">Por Defecto</a>
+				<a href="#" class="genric-btn primary circle">Primario</a>
+				<a href="#" class="genric-btn success circle">Éxito</a>
+				<a href="#" class="genric-btn info circle">Información</a>
+				<a href="#" class="genric-btn warning circle">Advertencia</a>
+				<a href="#" class="genric-btn danger circle">Peligro</a>
+				<a href="#" class="genric-btn link circle">Enlace</a>
+				<a href="#" class="genric-btn disable circle">Deshabilitado</a>
+			</div>
+			<div class="button-group-area mt-10">
+				<a href="#" class="genric-btn default-border circle">Por Defecto</a>
+				<a href="#" class="genric-btn primary-border circle">Primario</a>
+				<a href="#" class="genric-btn success-border circle">Éxito</a>
+				<a href="#" class="genric-btn info-border circle">Información</a>
+				<a href="#" class="genric-btn warning-border circle">Advertencia</a>
+				<a href="#" class="genric-btn danger-border circle">Peligro</a>
+				<a href="#" class="genric-btn link-border circle">Enlace</a>
+				<a href="#" class="genric-btn disable circle">Deshabilitado</a>
+			</div>
+			<div class="button-group-area mt-40">
+				<a href="#" class="genric-btn default circle arrow">Por Defecto<span class="lnr lnr-arrow-right"></span></a>
+				<a href="#" class="genric-btn primary circle arrow">Primario<span class="lnr lnr-arrow-right"></span></a>
+				<a href="#" class="genric-btn success circle arrow">Éxito<span class="lnr lnr-arrow-right"></span></a>
+				<a href="#" class="genric-btn info circle arrow">Información<span class="lnr lnr-arrow-right"></span></a>
+				<a href="#" class="genric-btn warning circle arrow">Advertencia<span class="lnr lnr-arrow-right"></span></a>
+				<a href="#" class="genric-btn danger circle arrow">Peligro<span class="lnr lnr-arrow-right"></span></a>
+			</div>
+			<div class="button-group-area mt-10">
+				<a href="#" class="genric-btn default-border circle arrow">Por Defecto<span class="lnr lnr-arrow-right"></span></a>
+				<a href="#" class="genric-btn primary-border circle arrow">Primario<span class="lnr lnr-arrow-right"></span></a>
+				<a href="#" class="genric-btn success-border circle arrow">Éxito<span class="lnr lnr-arrow-right"></span></a>
+				<a href="#" class="genric-btn info-border circle arrow">Información<span class="lnr lnr-arrow-right"></span></a>
+				<a href="#" class="genric-btn warning-border circle arrow">Advertencia<span class="lnr lnr-arrow-right"></span></a>
+				<a href="#" class="genric-btn danger-border circle arrow">Peligro<span class="lnr lnr-arrow-right"></span></a>
+			</div>
+			<div class="button-group-area mt-40">
+				<a href="#" class="genric-btn primary e-large">Extra Grande</a>
+				<a href="#" class="genric-btn success large">Grande</a>
+				<a href="#" class="genric-btn primary">Por Defecto</a>
+				<a href="#" class="genric-btn success medium">Mediano</a>
+				<a href="#" class="genric-btn primary small">Pequeño</a>
+			</div>
+			<div class="button-group-area mt-10">
+				<a href="#" class="genric-btn primary-border e-large">Extra Grande</a>
+				<a href="#" class="genric-btn success-border large">Grande</a>
+				<a href="#" class="genric-btn primary-border">Por Defecto</a>
+				<a href="#" class="genric-btn success-border medium">Mediano</a>
+				<a href="#" class="genric-btn primary-border small">Pequeño</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- Área de Alineación y Elementos -->
+	<div class="whole-wrap">
+		<div class="container box_1170">
+			<div class="section-top-border wow fadeInUp" data-wow-duration="1s">
+				<h3 class="mb-30">Alineado a la Izquierda</h3>
+				<div class="row">
+					<div class="col-md-3">
+						<img src="imagenes hotel/cabana.jpeg" alt="Cabaña" class="img-fluid rounded">
+					</div>
+					<div class="col-md-9 mt-sm-20">
+						<p>Nuestras cabañas están diseñadas pensando en el confort total de nuestros huéspedes. Ofrecemos espacios acogedores, rodeados de vegetación exuberante y equipados con amenidades modernas. Cada detalle ha sido seleccionado minuciosamente para brindar una atmósfera de relajación única en Pico Bonito, Honduras.</p>
+					</div>
+				</div>
+			</div>
+			<div class="section-top-border text-right wow fadeInUp" data-wow-duration="1s">
+				<h3 class="mb-30">Alineado a la Derecha</h3>
+				<div class="row">
+					<div class="col-md-9">
+						<p class="text-right">Disfruta de la mejor oferta gastronómica de la región en nuestro restaurante, donde combinamos ingredientes frescos locales con técnicas culinarias internacionales para complacer a los paladares más exigentes.</p>
+						<p class="text-right">Vive una experiencia culinaria inolvidable mientras contemplas hermosas vistas hacia el bosque tropical.</p>
+					</div>
+					<div class="col-md-3">
+						<img src="imagenes hotel/comida.jpg" alt="Comida" class="img-fluid rounded">
+					</div>
+				</div>
+			</div>
+			<div class="section-top-border wow fadeInUp" data-wow-duration="1s">
+				<h3 class="mb-30">Definición</h3>
+				<div class="row">
+					<div class="col-md-4">
+						<div class="single-defination">
+							<h4 class="mb-20">Definición 01</h4>
+							<p>Alojamiento de lujo rodeado de áreas verdes, perfecto para familias y parejas que buscan tranquilidad y contacto directo con la naturaleza.</p>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="single-defination">
+							<h4 class="mb-20">Definición 02</h4>
+							<p>Gastronomía de alta calidad elaborada por chefs profesionales con los ingredientes más frescos de la zona.</p>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="single-defination">
+							<h4 class="mb-20">Definición 03</h4>
+							<p>Atención personalizada las 24 horas del día para garantizar que tu estancia sea completamente placentera.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="section-top-border wow fadeInUp" data-wow-duration="1s">
+				<h3 class="mb-30">Bloque de Cita</h3>
+				<div class="row">
+					<div class="col-lg-12">
+						<blockquote class="generic-blockquote">
+							“Hospedarnos en este resort fue la mejor decisión de nuestras vacaciones. La tranquilidad, el servicio excepcional y la elegancia de las cabañas superaron por completo nuestras expectativas.”
+						</blockquote>
+					</div>
+				</div>
+			</div>
+			<div class="section-top-border wow fadeInUp" data-wow-duration="1s">
+				<h3 class="mb-30">Tabla de Visitas</h3>
+				<div class="progress-table-wrap">
+					<div class="progress-table">
+						<div class="table-head">
+							<div class="serial">#</div>
+							<div class="country">Países</div>
+							<div class="visit">Visitas</div>
+							<div class="percentage">Porcentajes</div>
+						</div>
+						<div class="table-row">
+							<div class="serial">01</div>
+							<div class="country"><img src="https://flagcdn.com/w40/hn.png" alt="Bandera Honduras" style="width: 24px; margin-right: 10px; vertical-align: middle;"> Honduras</div>
+							<div class="visit">645032</div>
+							<div class="percentage">
+								<div class="progress">
+									<div class="progress-bar color-1" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+								</div>
+							</div>
+						</div>
+						<div class="table-row">
+							<div class="serial">02</div>
+							<div class="country"><img src="https://flagcdn.com/w40/us.png" alt="Bandera Estados Unidos" style="width: 24px; margin-right: 10px; vertical-align: middle;"> Estados Unidos</div>
+							<div class="visit">524010</div>
+							<div class="percentage">
+								<div class="progress">
+									<div class="progress-bar color-2" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+								</div>
+							</div>
+						</div>
+						<div class="table-row">
+							<div class="serial">03</div>
+							<div class="country"><img src="https://flagcdn.com/w40/ca.png" alt="Bandera Canadá" style="width: 24px; margin-right: 10px; vertical-align: middle;"> Canadá</div>
+							<div class="visit">312040</div>
+							<div class="percentage">
+								<div class="progress">
+									<div class="progress-bar color-3" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="section-top-border wow fadeInUp" data-wow-duration="1s">
+				<h3>Galería de Imágenes</h3>
+				<div class="row gallery-item">
+					<div class="col-md-4">
+						<a href="imagenes hotel/cabana.jpeg" class="img-pop-up">
+							<div class="single-gallery-image" style="background: url('imagenes hotel/cabana.jpeg');"></div>
+						</a>
+					</div>
+					<div class="col-md-4">
+						<a href="imagenes hotel/cabana2.jpeg" class="img-pop-up">
+							<div class="single-gallery-image" style="background: url('imagenes hotel/cabana2.jpeg');"></div>
+						</a>
+					</div>
+					<div class="col-md-4">
+						<a href="imagenes hotel/cabana3.jpeg" class="img-pop-up">
+							<div class="single-gallery-image" style="background: url('imagenes hotel/cabana3.jpeg');"></div>
+						</a>
+					</div>
+					<div class="col-md-6">
+						<a href="imagenes hotel/ave.jpg" class="img-pop-up">
+							<div class="single-gallery-image" style="background: url('imagenes hotel/ave.jpg');"></div>
+						</a>
+					</div>
+					<div class="col-md-6">
+						<a href="imagenes hotel/catarata.jpg" class="img-pop-up">
+							<div class="single-gallery-image" style="background: url('imagenes hotel/catarata.jpg');"></div>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Sección de Elementos de Formulario -->
+			<div class="section-top-border wow fadeInUp" data-wow-duration="1s">
+				<div class="row">
+					<div class="col-lg-8 col-md-8">
+						<h3 class="mb-30">Elementos de Formulario</h3>
+						<form action="#">
+							<div class="mt-10">
+								<input type="text" name="first_name" placeholder="Nombre" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nombre'" required class="single-input">
+							</div>
+							<div class="mt-10">
+								<input type="text" name="last_name" placeholder="Apellido" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Apellido'" required class="single-input">
+							</div>
+							<div class="mt-10">
+								<input type="email" name="EMAIL" placeholder="Correo electrónico" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Correo electrónico'" required class="single-input">
+							</div>
+							<div class="input-group-icon mt-10">
+								<div class="icon"><i class="fa fa-thumb-tack" aria-hidden="true"></i></div>
+								<input type="text" name="address" placeholder="Dirección" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Dirección'" required class="single-input">
+							</div>
+							<div class="input-group-icon mt-10">
+								<div class="icon"><i class="fa fa-plane" aria-hidden="true"></i></div>
+								<div class="form-select" id="default-select">
+									<select>
+										<option value="1">Ciudad</option>
+										<option value="1">Tegucigalpa</option>
+										<option value="1">San Pedro Sula</option>
+										<option value="1">La Ceiba</option>
+									</select>
+								</div>
+							</div>
+							<div class="input-group-icon mt-10">
+								<div class="icon"><i class="fa fa-globe" aria-hidden="true"></i></div>
+								<div class="form-select" id="default-select2">
+									<select>
+										<option value="1">País</option>
+										<option value="1">Honduras</option>
+										<option value="1">Guatemala</option>
+										<option value="1">El Salvador</option>
+									</select>
+								</div>
+							</div>
+							<div class="mt-10">
+								<textarea class="single-textarea" placeholder="Mensaje" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Mensaje'" required></textarea>
+							</div>
+						</form>
+					</div>
+					<div class="col-lg-3 col-md-4 mt-sm-30">
+						<div class="single-element-widget">
+							<h3 class="mb-30">Interruptores</h3>
+							<div class="switch-wrap d-flex justify-content-between">
+								<p>01. Ejemplo de Interruptor</p>
+								<div class="primary-switch">
+									<input type="checkbox" id="default-switch">
+									<label for="default-switch"></label>
+								</div>
+							</div>
+							<div class="switch-wrap d-flex justify-content-between">
+								<p>02. Interruptor Primario</p>
+								<div class="primary-switch">
+									<input type="checkbox" id="primary-switch" checked>
+									<label for="primary-switch"></label>
+								</div>
+							</div>
+						</div>
+						<div class="single-element-widget mt-30">
+							<h3 class="mb-30">Casillas de Verificación</h3>
+							<div class="switch-wrap d-flex justify-content-between">
+								<p>01. Casilla Primaria</p>
+								<div class="primary-checkbox">
+									<input type="checkbox" id="primary-checkbox" checked>
+									<label for="primary-checkbox"></label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer>
+		<!-- Pie de Página -->
+		<div class="footer-area black-bg footer-padding">
+			<div class="container">
+				<div class="row d-flex justify-content-between">
+					<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+					   <div class="single-footer-caption mb-30">
+						  <div class="footer-logo">
+							<a href="index.html"><img src="imagenes hotel/hotel.jpg" alt="Logo Footer" style="max-height: 40px;"></a>
+						  </div>
+						  <div class="footer-social footer-social2">
+							  <a href="#"><i class="fab fa-facebook-f"></i></a>
+							  <a href="#"><i class="fab fa-twitter"></i></a>
+							  <a href="#"><i class="fas fa-globe"></i></a>
+							  <a href="#"><i class="fab fa-behance"></i></a>
+						  </div>
+						  <div class="footer-pera">
+							   <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos los derechos reservados | Diseñado con estilo elegante</p>
+						  </div>
+					   </div>
+					</div>
+					<div class="col-xl-3 col-lg-3 col-md-3 col-sm-5">
+						<div class="single-footer-caption mb-30">
+							<div class="footer-tittle">
+								<h4>Enlaces Rápidos</h4>
+								<ul>
+									<li><a href="about.html">Sobre Nosotros</a></li>
+									<li><a href="rooms.html">Nuestras Cabañas</a></li>
+									<li><a href="services.html">Servicios y Piscina</a></li>
+									<li><a href="contact.html">Contacto</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
+						<div class="single-footer-caption mb-30">
+							<div class="footer-tittle">
+								<h4>Reservaciones</h4>
+								<ul>
+									<li><a href="#">Tel: +504 9999-9999</a></li>
+									<li><a href="#">Skype: hotelbooking</a></li>
+									<li><a href="#">reservaciones@hotel.com</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
+						<div class="single-footer-caption mb-30">
+							<div class="footer-tittle">
+								<h4>Nuestra Ubicación</h4>
+								<ul>
+									<li><a href="#">Pico Bonito, La Ceiba</a></li>
+									<li><a href="#">Honduras, Centroamérica</a></li>
+								</ul>
+								 <div class="footer-form">
+									 <div id="mc_embed_signup">
+										 <form target="_blank" action="#" method="get" class="subscribe_form relative mail_part">
+											 <input type="email" name="email" id="newsletter-form-email" placeholder="Correo electrónico" class="placeholder hide-on-focus" onfocus="this.placeholder = ''" onblur="this.placeholder = ' Correo electrónico '">
+											 <div class="form-icon">
+											   <button type="submit" name="submit" id="newsletter-submit" class="email_icon newsletter-submit button-contactForm"><img src="assets/img/logo/form-iocn.jpg" alt="Icono"></button>
+											 </div>
+											 <div class="mt-10 info"></div>
+										 </form>
+									 </div>
+								 </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+    <!-- Scripts de Funcionalidad y Animaciones -->
+    <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="./assets/js/popper.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/jquery.slicknav.min.js"></script>
+    <script src="./assets/js/owl.carousel.min.js"></script>
+    <script src="./assets/js/slick.min.js"></script>
+    <script src="./assets/js/gijgo.min.js"></script>
+    <script src="./assets/js/wow.min.js"></script>
+    <script src="./assets/js/animated.headline.js"></script>
+    <script src="./assets/js/jquery.magnific-popup.js"></script>
+    <script src="./assets/js/jquery.scrollUp.min.js"></script>
+    <script src="./assets/js/jquery.nice-select.min.js"></script>
+    <script src="./assets/js/jquery.sticky.js"></script>
+    <script src="./assets/js/contact.js"></script>
+    <script src="./assets/js/jquery.form.js"></script>
+    <script src="./assets/js/jquery.validate.min.js"></script>
+    <script src="./assets/js/mail-script.js"></script>
+    <script src="./assets/js/jquery.ajaxchimp.min.js"></script>
+    <script src="./assets/js/plugins.js"></script>
+    <script src="./assets/js/main.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            new WOW().init();
+        });
+    </script>
+</body>
+</html>

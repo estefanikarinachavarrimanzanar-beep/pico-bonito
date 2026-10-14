@@ -1,0 +1,731 @@
+<!doctype html>
+<html class="no-js" lang="es">
+
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <title>Hotel Y Restaurante - Detalle del Blog</title>
+   <meta name="description" content="">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+  
+   <!-- CSS de la plantilla -->
+   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+   <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+   <link rel="stylesheet" href="assets/css/gijgo.css">
+   <link rel="stylesheet" href="assets/css/slicknav.css">
+   <link rel="stylesheet" href="assets/css/animate.min.css">
+   <link rel="stylesheet" href="assets/css/magnific-popup.css">
+   <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+   <link rel="stylesheet" href="assets/css/themify-icons.css">
+   <link rel="stylesheet" href="assets/css/slick.css">
+   <link rel="stylesheet" href="assets/css/nice-select.css">
+   <link rel="stylesheet" href="assets/css/style.css">
+   <link rel="stylesheet" href="assets/css/responsive.css">
+
+   <!-- Personalización Estricta: Verde Oscuro Elegante, Dorado Degradado y Animaciones -->
+   <style>
+      :root {
+          --verde-elegante: #1b3b2b;
+          --verde-oscuro: #0d1f16;
+          --verde-suave: #244d38;
+          --dorado-gradiente: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
+          --dorado-solido: #d4af37;
+      }
+
+      body {
+          background-color: #f4f6f4 !important;
+          overflow-x: hidden;
+      }
+
+      /* Animaciones de Interacción */
+      .single-post, .blog_right_sidebar aside, .comments-area, .comment-form, .blog-author {
+          transition: transform 0.4s ease, box-shadow 0.4s ease !important;
+      }
+
+      .single-post:hover, .blog-author:hover {
+          transform: translateY(-4px) !important;
+          box-shadow: 0 10px 25px rgba(13, 31, 22, 0.15) !important;
+      }
+
+      /* Encabezado y Navegación */
+      .header-area, .header-sticky, .main-header {
+          background-color: var(--verde-elegante) !important;
+          border-bottom: 3px solid var(--dorado-solido) !important;
+      }
+
+      .main-menu ul li a {
+          color: #ffffff !important;
+          font-weight: 600 !important;
+          transition: color 0.3s ease !important;
+      }
+
+      .main-menu ul li:hover > a {
+          color: var(--dorado-solido) !important;
+      }
+
+      .main-menu ul li .submenu {
+          background-color: var(--verde-elegante) !important;
+          border-top: 3px solid var(--dorado-solido) !important;
+          box-shadow: 0 10px 20px rgba(0,0,0,0.3) !important;
+      }
+
+      .main-menu ul li .submenu li a {
+          color: #ffffff !important;
+      }
+
+      .main-menu ul li .submenu li a:hover {
+          color: var(--dorado-solido) !important;
+          background-color: var(--verde-oscuro) !important;
+          padding-left: 20px !important;
+      }
+
+      /* Botones Dorados Degradados */
+      .btn, .btn1, .boxed-btn, .button, .btn_1 {
+          background: var(--dorado-gradiente) !important;
+          color: #1a1a1a !important;
+          border: none !important;
+          font-weight: 700 !important;
+          text-transform: uppercase !important;
+          transition: all 0.3s ease !important;
+          box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      }
+
+      .btn:hover, .btn1:hover, .boxed-btn:hover, .button:hover {
+          box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5) !important;
+          transform: translateY(-3px) !important;
+          color: #000000 !important;
+      }
+
+      .header-btn .btn1 {
+          padding: 12px 20px !important;
+          white-space: nowrap !important;
+          font-size: 13px !important;
+          line-height: 1 !important;
+      }
+
+      /* Banner Hero Corto */
+      .slider-area .single-slider.hero-overly {
+          position: relative;
+      }
+
+      .slider-area .single-slider.hero-overly::before {
+          content: "";
+          position: absolute;
+          top: 0; left: 0; width: 100%; height: 100%;
+          background: rgba(13, 31, 22, 0.65);
+          z-index: 1;
+      }
+
+      .hero-caption {
+          position: relative;
+          z-index: 2;
+      }
+
+      .hero-caption h2 {
+          color: #ffffff !important;
+          font-weight: 800 !important;
+      }
+
+      .hero-caption span {
+          color: var(--dorado-solido) !important;
+          font-weight: 700 !important;
+          text-transform: uppercase !important;
+      }
+
+      /* Detalles del Blog */
+      .blog_details h2 {
+          color: var(--verde-elegante) !important;
+          font-weight: 700;
+      }
+
+      .blog-info-link li a {
+          color: var(--verde-suave) !important;
+      }
+
+      .blog-info-link li a i {
+          color: var(--dorado-solido) !important;
+      }
+
+      /* Cita destacada (Quote) */
+      .quote-wrapper {
+          background-color: var(--verde-oscuro) !important;
+          border-left: 4px solid var(--dorado-solido) !important;
+          color: #ffffff !important;
+          padding: 25px !important;
+          border-radius: 6px;
+      }
+
+      .quotes {
+          color: #fcf6ba !important;
+          font-style: italic;
+      }
+
+      /* Sidebar widgets */
+      .blog_right_sidebar .widget_title {
+          background: var(--verde-elegante) !important;
+          color: var(--dorado-solido) !important;
+          border-bottom: 2px solid var(--dorado-solido) !important;
+          padding: 12px 20px;
+          border-radius: 4px;
+      }
+
+      .cat-list li a:hover {
+          color: var(--dorado-solido) !important;
+      }
+
+      .tag_cloud_widget ul li a:hover {
+          background: var(--dorado-gradiente) !important;
+          color: #1a1a1a !important;
+      }
+
+      /* Autor y Comentarios */
+      .blog-author {
+          background-color: #eaf0ed !important;
+          border-left: 4px solid var(--verde-elegante) !important;
+          padding: 25px;
+          border-radius: 6px;
+      }
+
+      .blog-author h4 {
+          color: var(--verde-elegante) !important;
+      }
+
+      .comments-area h4, .comment-form h4 {
+          color: var(--verde-elegante) !important;
+          border-bottom: 2px solid var(--dorado-solido) !important;
+          padding-bottom: 8px;
+          display: inline-block;
+      }
+
+      .btn-reply {
+          color: var(--dorado-solido) !important;
+          font-weight: bold !important;
+      }
+
+      /* Pie de Página (Footer) */
+      .footer-area.black-bg {
+          background-color: var(--verde-oscuro) !important;
+          border-top: 4px solid var(--dorado-solido) !important;
+      }
+
+      .footer-tittle h4 {
+          color: var(--dorado-solido) !important;
+      }
+
+      .footer-pera p, .footer-tittle ul li a {
+          color: #e0e0e0 !important;
+      }
+
+      .footer-tittle ul li a:hover {
+          color: var(--dorado-solido) !important;
+      }
+   </style>
+</head>
+
+<body>
+
+   <header>
+      <!-- Encabezado Principal -->
+     <div class="header-area header-sticky">
+          <div class="main-header ">
+              <div class="container">
+                  <div class="row align-items-center">
+                      <!-- logo -->
+                      <div class="col-xl-2 col-lg-2">
+                          <div class="logo">
+                             <a href="index.html"><img src="imagenes hotel/hotel.jpg" alt="Logo Hotel" style="max-height: 50px;"></a>
+                          </div>
+                      </div>
+                  <div class="col-xl-8 col-lg-8">
+                          <!-- Menú de navegación -->
+                          <div class="main-menu f-right d-none d-lg-block">
+                              <nav>
+                                  <ul id="navigation">                                                                                                                                     
+                                      <li><a href="index.html">Inicio</a></li>
+                                      <li><a href="about.html">Nosotros</a></li>
+                                      <li><a href="services.html">Servicios</a></li>
+                                      <li><a href="blog.html">Blog</a>
+                                          <ul class="submenu">
+                                              <li><a href="blog.html">Blog</a></li>
+                                              <li><a href="single-blog.html">Detalles del Blog</a></li>
+                                          </ul>
+                                      </li>
+                                      <li><a href="#">Páginas</a>
+                                          <ul class="submenu">
+                                              <li><a href="rooms.html">Habitaciones</a></li>
+                                              <li><a href="elements.html">Elementos</a></li>
+                                          </ul>
+                                      </li>
+                                      <li><a href="contact.html">Contacto</a></li>
+                                  </ul>
+                              </nav>
+                          </div>
+                      </div>             
+                      <div class="col-xl-2 col-lg-2">
+                          <div class="header-btn text-right">
+                              <a href="contact.html" class="btn btn1 d-none d-lg-inline-flex">Reservar En Línea</a>
+                          </div>
+                      </div>
+                      <div class="col-12">
+                          <div class="mobile_menu d-block d-lg-none"></div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+     </div>
+  </header>
+
+    <!-- Banner Principal Corto -->
+    <div class="slider-area">
+      <div class="single-slider hero-overly slider-height2 d-flex align-items-center" data-background="imagenes hotel/hotel.jpg" style="background-image: url('imagenes hotel/hotel.jpg'); background-size: cover; background-position: center;">
+          <div class="container">
+              <div class="row ">
+                  <div class="col-md-11 offset-xl-1 offset-lg-1 offset-md-1">
+                      <div class="hero-caption">
+                          <span>Blog</span>
+                          <h2>Artículo del Blog</h2>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+   <!--================ Área del Blog =================-->
+   <section class="blog_area single-post-area section-padding">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-8 posts-list">
+               <div class="single-post wow fadeInUp" data-wow-duration="1s">
+                  <div class="feature-img">
+                     <img class="img-fluid" src="imagenes hotel/experiencia 1.jpg" alt="Detalle del Blog">
+                  </div>
+                  <div class="blog_details">
+                     <h2>Descubre las mejores experiencias ecoturísticas y de descanso cerca de Pico Bonito
+                     </h2>
+                     <ul class="blog-info-link mt-3 mb-4">
+                        <li><a href="#"><i class="fa fa-user"></i> Viajes, Estilo de Vida</a></li>
+                        <li><a href="#"><i class="fa fa-comments"></i> 03 Comentarios</a></li>
+                     </ul>
+                     <p class="excert">
+                        Sumérgete en la belleza natural de Honduras disfrutando de una estancia de lujo rodeado de bosques tropicales, ríos de agua cristalina y la serenidad que solo nuestras cabañas exclusivas te pueden ofrecer.
+                     </p>
+                     <p>
+                        Nuestro resort no solo ofrece descanso y confort de clase mundial, sino también la oportunidad única de realizar avistamiento de aves exóticas, senderismo en senderos naturales y recorridos por majestuosas cataratas locales.
+                     </p>
+                     <div class="quote-wrapper wow fadeIn" data-wow-duration="1s">
+                        <div class="quotes">
+                           "El verdadero lujo radica en conectar con la naturaleza sin renunciar a la comodidad y sofisticación de un servicio de primera categoría."
+                        </div>
+                     </div>
+                     <p>
+                        Después de un día lleno de aventura en la montaña o la selva, puedes relajarte en nuestras piscinas refrescantes y deleitarte con la gastronomía gourmet local en nuestro restaurante.
+                     </p>
+                     <p>
+                        Nos aseguramos de que cada detalle de tu estancia esté cuidadosamente planificado para garantizar momentos inolvidables junto a tu familia o pareja.
+                     </p>
+                  </div>
+               </div>
+               <div class="navigation-top">
+                  <div class="d-sm-flex justify-content-between text-center">
+                     <p class="like-info"><span class="align-middle"><i class="fa fa-heart"></i></span> A María y 4 personas más les gusta esto</p>
+                     <div class="col-sm-4 text-center my-2 my-sm-0">
+                     </div>
+                     <ul class="social-icons">
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
+                        <li><a href="#"><i class="fab fa-behance"></i></a></li>
+                     </ul>
+                  </div>
+                  <div class="navigation-area">
+                     <div class="row">
+                        <div
+                           class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
+                           <div class="thumb">
+                              <a href="#">
+                                 <img class="img-fluid" src="imagenes hotel/experiencia 2.jpg" alt="" style="width: 60px; height: 60px; object-fit: cover;">
+                              </a>
+                           </div>
+                           <div class="arrow">
+                              <a href="#">
+                                 <span class="lnr text-white ti-arrow-left"></span>
+                              </a>
+                           </div>
+                           <div class="detials">
+                              <p>Artículo Anterior</p>
+                              <a href="#">
+                                 <h4>Senderismo y Aventura</h4>
+                              </a>
+                           </div>
+                        </div>
+                        <div
+                           class="col-lg-6 col-md-6 col-12 nav-right flex-row d-flex justify-content-end align-items-center">
+                           <div class="detials">
+                              <p>Siguiente Artículo</p>
+                              <a href="#">
+                                 <h4>Gastronomía Local</h4>
+                              </a>
+                           </div>
+                           <div class="arrow">
+                              <a href="#">
+                                 <span class="lnr text-white ti-arrow-right"></span>
+                              </a>
+                           </div>
+                           <div class="thumb">
+                              <a href="#">
+                                 <img class="img-fluid" src="cena tipica.jpg" alt="" style="width: 60px; height: 60px; object-fit: cover;">
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="blog-author wow fadeInUp" data-wow-duration="1s">
+                  <div class="media align-items-center">
+                     <img src="assets/img/blog/author.png" alt="Autor">
+                     <div class="media-body">
+                        <a href="#">
+                           <h4>Carlos Mendoza</h4>
+                        </a>
+                        <p>Especialista en ecoturismo y amante de la naturaleza. Apasionado por compartir las joyas ocultas y experiencias de viaje en Honduras.</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="comments-area wow fadeInUp" data-wow-duration="1s">
+                  <h4>03 Comentarios</h4>
+                  <div class="comment-list">
+                     <div class="single-comment justify-content-between d-flex">
+                        <div class="user justify-content-between d-flex">
+                           <div class="thumb">
+                              <img src="assets/img/comment/comment_1.png" alt="Comentario">
+                           </div>
+                           <div class="desc">
+                              <p class="comment">
+                                 ¡Una experiencia increíble! Las cabañas son hermosas y la comida del restaurante es excelente. Sin duda volveremos pronto.
+                              </p>
+                              <div class="d-flex justify-content-between">
+                                 <div class="d-flex align-items-center">
+                                    <h5>
+                                       <a href="#">Emily Blunt</a>
+                                    </h5>
+                                    <p class="date">4 de septiembre, 2026 a las 3:12 pm </p>
+                                 </div>
+                                 <div class="reply-btn">
+                                    <a href="#" class="btn-reply text-uppercase">responder</a>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="comment-list">
+                     <div class="single-comment justify-content-between d-flex">
+                        <div class="user justify-content-between d-flex">
+                           <div class="thumb">
+                              <img src="assets/img/comment/comment_2.png" alt="Comentario">
+                           </div>
+                           <div class="desc">
+                              <p class="comment">
+                                 La caminata hacia las cascadas fue el punto culminante de nuestro viaje. Recomiendo totalmente alojarse en estas cabañas.
+                              </p>
+                              <div class="d-flex justify-content-between">
+                                 <div class="d-flex align-items-center">
+                                    <h5>
+                                       <a href="#">Jorge Martínez</a>
+                                    </h5>
+                                    <p class="date">15 de Enero, 2026 a las 10:45 am </p>
+                                 </div>
+                                 <div class="reply-btn">
+                                    <a href="#" class="btn-reply text-uppercase">responder</a>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="comment-list">
+                     <div class="single-comment justify-content-between d-flex">
+                        <div class="user justify-content-between d-flex">
+                           <div class="thumb">
+                              <img src="assets/img/comment/comment_3.png" alt="Comentario">
+                           </div>
+                           <div class="desc">
+                              <p class="comment">
+                                 Un ambiente sumamente tranquilo para desconectar de la ciudad. El servicio del personal fue de primera clase.
+                              </p>
+                              <div class="d-flex justify-content-between">
+                                 <div class="d-flex align-items-center">
+                                    <h5>
+                                       <a href="#">Lucía Fernández</a>
+                                    </h5>
+                                    <p class="date">20 de Febrero, 2026 a las 6:30 pm </p>
+                                 </div>
+                                 <div class="reply-btn">
+                                    <a href="#" class="btn-reply text-uppercase">responder</a>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="comment-form wow fadeInUp" data-wow-duration="1s">
+                  <h4>Deja un Comentario</h4>
+                  <form class="form-contact comment_form" action="#" id="commentForm">
+                     <div class="row">
+                        <div class="col-12">
+                           <div class="form-group">
+                              <textarea class="form-control w-100" name="comment" id="comment" cols="30" rows="9"
+                                 placeholder="Escribe tu comentario..."></textarea>
+                           </div>
+                        </div>
+                        <div class="col-sm-6">
+                           <div class="form-group">
+                              <input class="form-control" name="name" id="name" type="text" placeholder="Nombre completo">
+                           </div>
+                        </div>
+                        <div class="col-sm-6">
+                           <div class="form-group">
+                              <input class="form-control" name="email" id="email" type="email" placeholder="Correo electrónico">
+                           </div>
+                        </div>
+                        <div class="col-12">
+                           <div class="form-group">
+                              <input class="form-control" name="website" id="website" type="text" placeholder="Sitio web (opcional)">
+                           </div>
+                        </div>
+                     </div>
+                     <div class="form-group">
+                        <button type="submit" class="button button-contactForm btn_1 boxed-btn">Enviar Mensaje</button>
+                     </div>
+                  </form>
+               </div>
+            </div>
+            <div class="col-lg-4">
+               <div class="blog_right_sidebar">
+                  <aside class="single_sidebar_widget search_widget wow fadeInRight" data-wow-duration="1s">
+                     <form action="#">
+                        <div class="form-group">
+                           <div class="input-group mb-3">
+                              <input type="text" class="form-control" placeholder='Buscar palabra clave'
+                                 onfocus="this.placeholder = ''" onblur="this.placeholder = 'Buscar palabra clave'">
+                              <div class="input-group-append">
+                                 <button class="btn" type="button"><i class="ti-search"></i></button>
+                              </div>
+                           </div>
+                        </div>
+                        <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
+                           type="submit">Buscar</button>
+                     </form>
+                  </aside>
+                  <aside class="single_sidebar_widget post_category_widget wow fadeInRight" data-wow-duration="1s" data-wow-delay=".2s">
+                     <h4 class="widget_title">Categorías</h4>
+                     <ul class="list cat-list">
+                        <li>
+                           <a href="#" class="d-flex">
+                              <p>Comida y Restaurante</p>
+                              <p>(37)</p>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="#" class="d-flex">
+                              <p>Noticias de Viajes</p>
+                              <p>(10)</p>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="#" class="d-flex">
+                              <p>Naturaleza y Cabañas</p>
+                              <p>(03)</p>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="#" class="d-flex">
+                              <p>Servicios y Spa</p>
+                              <p>(11)</p>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="#" class="d-flex">
+                              <p>Inspiración</p>
+                              <p>(21)</p>
+                           </a>
+                        </li>
+                     </ul>
+                  </aside>
+                  <aside class="single_sidebar_widget popular_post_widget wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s">
+                     <h3 class="widget_title">Publicaciones Recientes</h3>
+                     <div class="media post_item">
+                        <img src="habitacion2.jpg" alt="post" style="width: 80px; height: 80px; object-fit: cover;">
+                        <div class="media-body">
+                           <a href="single-blog.html">
+                              <h3>Noche romántica en las cabañas...</h3>
+                           </a>
+                           <p>12 de Enero, 2026</p>
+                        </div>
+                     </div>
+                     <div class="media post_item">
+                        <img src="imagenes hotel/experiencia 2.jpg" alt="post" style="width: 80px; height: 80px; object-fit: cover;">
+                        <div class="media-body">
+                           <a href="single-blog.html">
+                              <h3>Las mejores cascadas de la zona</h3>
+                           </a>
+                           <p>Hace 2 horas</p>
+                        </div>
+                     </div>
+                     <div class="media post_item">
+                        <img src="comida.jpg" alt="post" style="width: 80px; height: 80px; object-fit: cover;">
+                        <div class="media-body">
+                           <a href="single-blog.html">
+                              <h3>Gastronomía típica hondureña</h3>
+                           </a>
+                           <p>Hace 3 horas</p>
+                        </div>
+                     </div>
+                  </aside>
+                  <aside class="single_sidebar_widget tag_cloud_widget wow fadeInRight" data-wow-duration="1s" data-wow-delay=".4s">
+                     <h4 class="widget_title">Etiquetas</h4>
+                     <ul class="list">
+                        <li><a href="#">cabañas</a></li>
+                        <li><a href="#">piscina</a></li>
+                        <li><a href="#">restaurante</a></li>
+                        <li><a href="#">naturaleza</a></li>
+                        <li><a href="#">honduras</a></li>
+                        <li><a href="#">estilo de vida</a></li>
+                        <li><a href="#">relax</a></li>
+                     </ul>
+                  </aside>
+                  <aside class="single_sidebar_widget instagram_feeds wow fadeInRight" data-wow-duration="1s" data-wow-delay=".5s">
+                     <h4 class="widget_title">Galería Instagram</h4>
+                     <ul class="instagram_row flex-wrap">
+                        <li><a href="#"><img class="img-fluid" src="imagenes hotel/ave.jpg" alt="" style="width: 80px; height: 80px; object-fit: cover;"></a></li>
+                        <li><a href="#"><img class="img-fluid" src="imagenes hotel/catarata.jpg" alt="" style="width: 80px; height: 80px; object-fit: cover;"></a></li>
+                        <li><a href="#"><img class="img-fluid" src="imagenes hotel/senderismo.jpg" alt="" style="width: 80px; height: 80px; object-fit: cover;"></a></li>
+                        <li><a href="#"><img class="img-fluid" src="imagenes hotel/spa.jpeg" alt="" style="width: 80px; height: 80px; object-fit: cover;"></a></li>
+                     </ul>
+                  </aside>
+                  <aside class="single_sidebar_widget newsletter_widget wow fadeInRight" data-wow-duration="1s" data-wow-delay=".6s">
+                     <h4 class="widget_title">Boletín Informativo</h4>
+                     <form action="#">
+                        <div class="form-group">
+                           <input type="email" class="form-control" onfocus="this.placeholder = ''"
+                              onblur="this.placeholder = 'Ingresa tu correo'" placeholder='Ingresa tu correo' required>
+                        </div>
+                        <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
+                           type="submit">Suscribirse</button>
+                     </form>
+                  </aside>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!--================ Fin del Área del Blog =================-->
+
+   <footer>
+      <!-- Pie de Página -->
+      <div class="footer-area black-bg footer-padding">
+          <div class="container">
+              <div class="row d-flex justify-content-between">
+                  <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                     <div class="single-footer-caption mb-30">
+                        <div class="footer-logo">
+                          <a href="index.html"><img src="imagenes hotel/hotel.jpg" alt="Logo Footer" style="max-height: 40px;"></a>
+                        </div>
+                        <div class="footer-social footer-social2">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-globe"></i></a>
+                            <a href="#"><i class="fab fa-behance"></i></a>
+                        </div>
+                        <div class="footer-pera">
+                             <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos los derechos reservados | Diseñado con estilo elegante</p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-xl-3 col-lg-3 col-md-3 col-sm-5">
+                      <div class="single-footer-caption mb-30">
+                          <div class="footer-tittle">
+                              <h4>Enlaces Rápidos</h4>
+                              <ul>
+                                  <li><a href="about.html">Sobre Nosotros</a></li>
+                                  <li><a href="rooms.html">Nuestras Cabañas</a></li>
+                                  <li><a href="services.html">Servicios y Piscina</a></li>
+                                  <li><a href="contact.html">Contacto</a></li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
+                      <div class="single-footer-caption mb-30">
+                          <div class="footer-tittle">
+                              <h4>Reservaciones</h4>
+                              <ul>
+                                  <li><a href="#">Tel: +504 9999-9999</a></li>
+                                  <li><a href="#">Skype: hotelbooking</a></li>
+                                  <li><a href="#">reservaciones@hotel.com</a></li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
+                      <div class="single-footer-caption mb-30">
+                          <div class="footer-tittle">
+                              <h4>Nuestra Ubicación</h4>
+                              <ul>
+                                  <li><a href="#">Pico Bonito, La Ceiba</a></li>
+                                  <li><a href="#">Honduras, Centroamérica</a></li>
+                              </ul>
+                               <div class="footer-form">
+                                   <div id="mc_embed_signup">
+                                       <form target="_blank" action="#" method="get" class="subscribe_form relative mail_part">
+                                           <input type="email" name="email" id="newsletter-form-email" placeholder="Correo electrónico" class="placeholder hide-on-focus" onfocus="this.placeholder = ''" onblur="this.placeholder = ' Correo electrónico '">
+                                           <div class="form-icon">
+                                             <button type="submit" name="submit" id="newsletter-submit" class="email_icon newsletter-submit button-contactForm"><img src="assets/img/logo/form-iocn.jpg" alt="Icono"></button>
+                                           </div>
+                                           <div class="mt-10 info"></div>
+                                       </form>
+                                   </div>
+                               </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </footer>
+
+   <!-- Scripts de Funcionalidad y Animaciones -->
+   <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
+   <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+   <script src="./assets/js/popper.min.js"></script>
+   <script src="./assets/js/bootstrap.min.js"></script>
+   <script src="./assets/js/jquery.slicknav.min.js"></script>
+   <script src="./assets/js/owl.carousel.min.js"></script>
+   <script src="./assets/js/slick.min.js"></script>
+   <script src="./assets/js/gijgo.min.js"></script>
+   <script src="./assets/js/wow.min.js"></script>
+   <script src="./assets/js/animated.headline.js"></script>
+   <script src="./assets/js/jquery.magnific-popup.js"></script>
+   <script src="./assets/js/jquery.scrollUp.min.js"></script>
+   <script src="./assets/js/jquery.nice-select.min.js"></script>
+   <script src="./assets/js/jquery.sticky.js"></script>
+   <script src="./assets/js/contact.js"></script>
+   <script src="./assets/js/jquery.form.js"></script>
+   <script src="./assets/js/jquery.validate.min.js"></script>
+   <script src="./assets/js/mail-script.js"></script>
+   <script src="./assets/js/jquery.ajaxchimp.min.js"></script>
+   <script src="./assets/js/plugins.js"></script>
+   <script src="./assets/js/main.js"></script>
+
+   <script>
+        $(document).ready(function(){
+            new WOW().init();
+        });
+   </script>
+</body>
+
+</html>

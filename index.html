@@ -1,0 +1,963 @@
+<!doctype html>
+<html class="no-js" lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Pico Bonito- Lujo y Naturaleza</title>
+        <meta name="description" content="Hotel y Restaurante de Lujo">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="manifest" href="site.webmanifest">
+        <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+        <!-- CSS de la plantilla -->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="assets/css/gijgo.css">
+        <link rel="stylesheet" href="assets/css/slicknav.css">
+        <link rel="stylesheet" href="assets/css/animate.min.css">
+        <link rel="stylesheet" href="assets/css/magnific-popup.css">
+        <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="assets/css/themify-icons.css">
+        <link rel="stylesheet" href="assets/css/slick.css">
+        <link rel="stylesheet" href="assets/css/nice-select.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/responsive.css">
+
+        <!-- Personalización de Estilo: Verde Oscuro Elegante, Dorado Degradado y Animaciones -->
+        <style>
+            :root {
+                --verde-elegante: #1b3b2b;
+                --verde-oscuro: #0d1f16;
+                --verde-suave: #244d38;
+                --dorado-gradiente: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
+                --dorado-solido: #d4af37;
+            }
+
+            body {
+                background-color: #f4f6f4 !important;
+                overflow-x: hidden;
+            }
+
+            /* --- Centrado perfecto y unificado para todos los botones de reserva y acción --- */
+            .header-btn .btn1, .btn, .btn1, .view-btn1, .more-btn1, .select-btn, .border-btn {
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                text-align: center !important;
+                margin: 0 auto !important;
+            }
+
+            .header-btn .btn1 {
+                padding: 12px 15px !important;
+                white-space: nowrap !important;
+                font-size: 13px !important;
+                line-height: 1 !important;
+            }
+
+            /* --- Animaciones de Interacción y Transición Elegantes --- */
+            .single-room, .single-blog, .dining-caption, .customer-img, .single-select-box, .video-section-box {
+                transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease, border-color 0.4s ease !important;
+            }
+
+            .single-room:hover {
+                transform: translateY(-8px) scale(1.02) !important;
+                box-shadow: 0 15px 30px rgba(13, 31, 22, 0.25) !important;
+                border-color: var(--dorado-solido) !important;
+            }
+
+            .video-section-box:hover {
+                transform: translateY(-5px) !important;
+                box-shadow: 0 15px 35px rgba(13, 31, 22, 0.3) !important;
+            }
+
+            .single-blog:hover {
+                transform: translateY(-6px) !important;
+                box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15) !important;
+            }
+
+            .room-img img, .blog-img img, .gallery-img img {
+                transition: transform 0.6s ease !important;
+            }
+
+            .single-room:hover .room-img img, 
+            .single-blog:hover .blog-img img, 
+            .gallery-img:hover img {
+                transform: scale(1.08) !important;
+            }
+
+            /* --- Encabezado y Navegación --- */
+            .header-area, .header-sticky, .main-header {
+                background-color: var(--verde-elegante) !important;
+                border-bottom: 3px solid var(--dorado-solido) !important;
+            }
+
+            .main-menu ul li a {
+                color: #ffffff !important;
+                font-weight: 600 !important;
+                transition: color 0.3s ease !important;
+            }
+
+            .main-menu ul li:hover > a {
+                color: var(--dorado-solido) !important;
+            }
+
+            .main-menu ul li .submenu {
+                background-color: var(--verde-elegante) !important;
+                border-top: 3px solid var(--dorado-solido) !important;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.3) !important;
+            }
+
+            .main-menu ul li .submenu li a {
+                color: #ffffff !important;
+            }
+
+            .main-menu ul li .submenu li a:hover {
+                color: var(--dorado-solido) !important;
+                background-color: var(--verde-oscuro) !important;
+                padding-left: 20px !important;
+            }
+
+            /* --- Botones Dorados Degradados --- */
+            .btn, .btn1, .view-btn1, .more-btn1, .select-btn, .border-btn {
+                background: var(--dorado-gradiente) !important;
+                color: #1a1a1a !important;
+                border: none !important;
+                font-weight: 700 !important;
+                text-transform: uppercase !important;
+                transition: all 0.3s ease !important;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            }
+
+            .btn:hover, .view-btn1:hover, .more-btn1:hover, .select-btn:hover, .border-btn:hover {
+                box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5) !important;
+                transform: translateY(-3px) !important;
+                color: #000000 !important;
+            }
+
+            /* --- Barra de Reservas --- */
+            .booking-area {
+                background-color: var(--verde-oscuro) !important;
+                border-top: 2px solid var(--dorado-solido) !important;
+                border-bottom: 2px solid var(--dorado-solido) !important;
+                padding: 25px 0 !important;
+            }
+
+            .boking-tittle span {
+                color: #fcf6ba !important;
+                font-weight: bold !important;
+            }
+
+            /* --- Sección Sobre Nosotros --- */
+            .make-customer-area {
+                background: var(--dorado-gradiente) !important;
+                padding: 60px 0 !important;
+            }
+
+            .customer-caption h2 {
+                color: #0d1f16 !important;
+                font-weight: 800 !important;
+            }
+
+            .customer-caption span {
+                color: #1b3b2b !important;
+                font-weight: bold !important;
+                text-transform: uppercase !important;
+            }
+
+            .customer-caption .caption-details p {
+                color: #1a1a1a !important;
+                font-weight: 500 !important;
+            }
+
+            .customer-caption .more-btn1 {
+                background: var(--verde-elegante) !important;
+                color: #ffffff !important;
+            }
+
+            .customer-caption .more-btn1:hover {
+                background: var(--verde-oscuro) !important;
+                color: var(--dorado-solido) !important;
+            }
+
+            /* --- Estilos Especiales para la Sección de Video Pequeño y Elegante --- */
+            .video-section-box {
+                background-color: var(--verde-elegante);
+                border: 2px solid var(--dorado-solido);
+                border-radius: 12px;
+                padding: 40px 30px;
+                color: #ffffff;
+                box-shadow: 0 10px 30px rgba(13, 31, 22, 0.3);
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .video-section-box h4 {
+                color: var(--dorado-solido);
+                font-size: 14px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                margin-bottom: 10px;
+            }
+
+            .video-section-box h2 {
+                color: #ffffff;
+                font-size: 28px;
+                font-weight: 800;
+                margin-bottom: 20px;
+                line-height: 1.3;
+            }
+
+            .video-section-box p {
+                color: #e0e0e0;
+                font-size: 15px;
+                line-height: 1.7;
+                margin-bottom: 20px;
+            }
+
+            .video-wrapper {
+                max-width: 320px;
+                margin: 0 auto;
+                border-radius: 12px;
+                overflow: hidden;
+                box-shadow: 0 10px 30px rgba(13, 31, 22, 0.3);
+                border: 2px solid var(--dorado-solido);
+                background-color: #000;
+            }
+
+            /* --- Títulos Secundarios y Cabañas --- */
+            .font-back-tittle .archivment-front h3, 
+            .single-room .room-caption h3 a {
+                color: var(--verde-elegante) !important;
+                font-weight: 700;
+            }
+
+            .font-back-tittle .archivment-back {
+                color: rgba(27, 59, 43, 0.08) !important;
+            }
+
+            .dining-caption span, 
+            .blog-cap-top span,
+            .per-night span {
+                color: var(--dorado-solido) !important;
+                font-weight: bold !important;
+            }
+
+            .single-room {
+                border: 1px solid rgba(27, 59, 43, 0.15) !important;
+                border-radius: 8px !important;
+                overflow: hidden !important;
+                background-color: #ffffff !important;
+            }
+
+            .single-room .room-caption {
+                border-top: 3px solid var(--verde-elegante) !important;
+            }
+
+            /* --- Restaurante & Piscina --- */
+            .single-dining-area.left-img {
+                background-image: url('imagenes hotel/cena tipica.JPG') !important;
+            }
+
+            .single-dining-area.right-img {
+                background-image: url('imagenes hotel/comida.JPG') !important;
+            }
+
+            .dining-caption {
+                background: rgba(27, 59, 43, 0.88) !important;
+                padding: 35px !important;
+                border-radius: 8px !important;
+                border: 1px solid var(--dorado-solido) !important;
+            }
+
+            .dining-caption h3, .dining-caption p {
+                color: #ffffff !important;
+            }
+
+            .service-experience {
+                background-color: var(--verde-elegante) !important;
+                border: 2px solid var(--dorado-solido) !important;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            }
+
+            .service-experience h3 {
+                color: #ffffff !important;
+            }
+
+            /* --- Testimonios --- */
+            .testimonial-area {
+                background-color: #eaf0ed !important;
+            }
+
+            .testimonial-ratting i {
+                color: var(--dorado-solido) !important;
+            }
+
+            /* --- Pie de Página (Footer) --- */
+            .footer-area.black-bg {
+                background-color: var(--verde-oscuro) !important;
+                border-top: 4px solid var(--dorado-solido) !important;
+            }
+
+            .footer-tittle h4 {
+                color: var(--dorado-solido) !important;
+            }
+
+            .footer-pera p, .footer-tittle ul li a {
+                color: #e0e0e0 !important;
+                transition: color 0.3s ease;
+            }
+
+            .footer-tittle ul li a:hover {
+                color: var(--dorado-solido) !important;
+                padding-left: 5px;
+            }
+        </style>
+   </head>
+
+   <body>
+       
+    <!-- Preloader -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <strong>Hotel</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <header>
+       <div class="header-area header-sticky">
+            <div class="main-header ">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <!-- Logotipo -->
+                        <div class="col-xl-2 col-lg-2">
+                            <div class="logo">
+                               <a href="index.html"><img src="imagenes hotel/hotel.JPG" alt="Logo Hotel" style="max-height: 50px;"></a>
+                            </div>
+                        </div>
+                    <div class="col-xl-8 col-lg-8">
+                            <!-- Menú de Navegación -->
+                            <div class="main-menu f-right d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">                                                                                                                                     
+                                        <li><a href="index.html">Inicio</a></li>
+                                        <li><a href="about.html">Nosotros</a></li>
+                                        <li><a href="services.html">Servicios</a></li>
+                                        <li><a href="blog.html">Blog</a>
+                                            <ul class="submenu">
+                                                <li><a href="blog.html">Blog</a></li>
+                                                <li><a href="single-blog.html">Detalles del Blog</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Páginas</a>
+                                            <ul class="submenu">
+                                                <li><a href="rooms.html">Habitaciones</a></li>
+                                                <li><a href="elements.html">Elementos</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="contact.html">Contacto</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>             
+                        <div class="col-xl-2 col-lg-2">
+                            <div class="header-btn">
+                                <a href="contact.html" class="btn btn1 d-none d-lg-block">Reservar En Línea</a>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       </div>
+    </header>
+   
+    <main>
+
+        <!-- Carrusel Principal -->
+        <div class="slider-area">
+            <div class="slider-active dot-style">
+                <div class="single-slider hero-overly slider-height d-flex align-items-center" data-background="imagenes hotel/hotel.JPG" style="background-image: url('imagenes hotel/hotel.JPG'); background-size: cover; background-position: center;">
+                    <div class="container">
+                        <div class="row justify-content-center text-center">
+                            <div class="col-xl-9">
+                                <div class="h1-slider-caption">
+                                    <h1 data-animation="fadeInUp" data-delay=".4s">El Mejor Hotel de la Ciudad</h1>
+                                    <h3 data-animation="fadeInDown" data-delay=".6s">Pico Bonito</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="single-slider hero-overly slider-height d-flex align-items-center" data-background="imagenes hotel/hotel.JPG" style="background-image: url('imagenes hotel/hotel.JPG'); background-size: cover; background-position: center;">
+                    <div class="container">
+                        <div class="row justify-content-center text-center">
+                            <div class="col-xl-9">
+                                <div class="h1-slider-caption">
+                                    <h1 data-animation="fadeInUp" data-delay=".4s">Experiencia Única e Inolvidable</h1>
+                                    <h3 data-animation="fadeInDown" data-delay=".6s">Confort & Naturaleza</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reservas -->
+        <div class="booking-area wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
+            <div class="container">
+               <div class="row ">
+               <div class="col-12">
+                <form action="">
+                <div class="booking-wrap d-flex justify-content-between align-items-center">
+                 
+                    <div class="single-select-box mb-30">
+                        <div class="boking-tittle">
+                            <span>Fecha de Entrada:</span>
+                        </div>
+                        <div class="boking-datepicker">
+                            <input id="datepicker1" placeholder="10/12/2026" />
+                        </div>
+                   </div>
+
+                    <div class="single-select-box mb-30">
+                        <div class="boking-tittle">
+                            <span>Fecha de Salida:</span>
+                        </div>
+                        <div class="boking-datepicker">
+                            <input id="datepicker2" placeholder="12/12/2026" />
+                        </div>
+                   </div>
+
+                    <div class="single-select-box mb-30">
+                        <div class="boking-tittle">
+                            <span>Adultos:</span>
+                        </div>
+                        <div class="select-this">
+                            <div class="select-itms">
+                                <select name="select" id="select1">
+                                    <option value="">1</option>
+                                    <option value="">2</option>
+                                    <option value="">3</option>
+                                    <option value="">4</option>
+                                </select>
+                            </div>
+                        </div>
+                   </div>
+
+                    <div class="single-select-box mb-30">
+                        <div class="boking-tittle">
+                            <span>Niños:</span>
+                        </div>
+                        <div class="select-this">
+                            <div class="select-itms">
+                                <select name="select" id="select2">
+                                    <option value="">0</option>
+                                    <option value="">1</option>
+                                    <option value="">2</option>
+                                    <option value="">3</option>
+                                </select>
+                            </div>
+                        </div>
+                   </div>
+
+                    <div class="single-select-box mb-30">
+                        <div class="boking-tittle">
+                            <span>Habitaciones:</span>
+                        </div>
+                        <div class="select-this">
+                            <div class="select-itms">
+                                <select name="select" id="select3">
+                                    <option value="">1</option>
+                                    <option value="">2</option>
+                                    <option value="">3</option>
+                                    <option value="">4</option>
+                                </select>
+                            </div>
+                        </div>
+                   </div>
+
+                    <div class="single-select-box pt-45 mb-30">
+                        <a href="contact.html" class="btn select-btn">Reservar Ahora</a>
+                   </div>
+
+                </div>
+            </form>
+               </div>
+               </div>
+            </div>
+        </div>
+
+        <!-- Sobre Nosotros -->
+        <section class="make-customer-area customar-padding fix">
+            <div class="container-fluid p-0">
+                <div class="row">
+                   <div class="col-xl-5 col-lg-6">
+                        <div class="customer-img mb-120 wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s">
+                            <img src="imagenes hotel/cabana.JPEG" class="customar-img1" alt="Cabaña Principal">
+                            <img src="imagenes hotel/cabana2.JPEG" class="customar-img2" alt="Cabaña Secundaria">
+                            <div class="service-experience heartbeat">
+                                <h3>25 Años de Experiencia<br>en Servicio</h3>
+                            </div>
+                        </div>
+                   </div>
+                    <div class="col-xl-4 col-lg-4">
+                        <div class="customer-caption wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s">
+                            <span>Sobre Nuestra Empresa</span>
+                            <h2>Haz del cliente el héroe de tu historia</h2>
+                            <div class="caption-details">
+                                <p class="pera-dtails">Ofrecemos el mejor ambiente para tu descanso con instalaciones de lujo y atención personalizada.</p>
+                                <p>Disfruta de la tranquilidad, vistas panorámicas impresionantes y la mejor oferta gastronómica rodeado de naturaleza.</p>
+                                <a href="about.html" class="btn more-btn1">Conoce Más <i class="ti-angle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Video Institucional (Lado a Lado con Contenido Elegante y Animación) -->
+        <section class="video-area section-padding" style="padding: 80px 0; background-color: #f4f6f4;">
+            <div class="container">
+                <div class="row justify-content-center mb-45">
+                    <div class="col-xl-8">
+                        <div class="font-back-tittle text-center wow fadeInUp" data-wow-duration="1s">
+                            <div class="archivment-front">
+                                <h3>Recorrido Virtual</h3>
+                            </div>
+                            <h3 class="archivment-back">Nuestro Hotel</h3>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row align-items-center">
+                    <!-- Columna Izquierda: Video Pequeño y Vertical -->
+                    <div class="col-lg-5 mb-30 wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".2s">
+                        <div class="video-wrapper">
+                            <video controls style="width: 100%; display: block;">
+                                <source src="nuestro hotel.mp4" type="video/mp4">
+                                Tu navegador no soporta la reproducción de video.
+                            </video>
+                        </div>
+                    </div>
+
+                    <!-- Columna Derecha: Tarjeta de Contenido Representativo de la Naturaleza -->
+                    <div class="col-lg-7 mb-30 wow fadeInRight" data-wow-duration="1s" data-wow-delay=".4s">
+                        <div class="video-section-box">
+                            <h4>Nuestra Naturaleza</h4>
+                            <h2>La Experiencia y el Paisaje</h2>
+                            <p>Sumérgete en un entorno donde el lujo y la naturaleza se fusionan a la perfección. Nuestro hotel te ofrece una vivencia inigualable junto al Parque Nacional Pico Bonito, destacando por su entorno montañoso imponente, aire puro y la magia de la biodiversidad tropical.</p>
+                            <p>Cada rincón está pensado para brindarte paz absoluta, confort exclusivo y vistas panorámicas excepcionales que transforman cada estancia en un recuerdo inolvidable.</p>
+                            
+                            <div>
+                                <a href="contact.html" class="btn view-btn1">Reserva Tu Experiencia <i class="ti-angle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Habitaciones -->
+        <section class="room-area">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-8">
+                        <div class="font-back-tittle mb-45 text-center wow fadeInUp" data-wow-duration="1s">
+                            <div class="archivment-front">
+                                <h3>Nuestras Cabañas</h3>
+                            </div>
+                            <h3 class="archivment-back">Habitaciones</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
+                        <div class="single-room mb-50">
+                            <div class="room-img">
+                               <a href="rooms.html"><img src="imagenes hotel/cabana.JPEG" alt="Cabaña Clásica"></a>
+                            </div>
+                            <div class="room-caption">
+                                <h3><a href="rooms.html">Cabaña Clásica Matrimonial</a></h3>
+                                <div class="per-night">
+                                    <span><u>Lps.</u> 3,700 <span>/ por noche</span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
+                        <div class="single-room mb-50">
+                            <div class="room-img">
+                               <a href="rooms.html"><img src="imagenes hotel/cabana2.JPEG" alt="Cabaña Familiar"></a>
+                            </div>
+                            <div class="room-caption">
+                                <h3><a href="rooms.html">Cabaña Familiar Ejecutiva</a></h3>
+                                <div class="per-night">
+                                    <span><u>Lps.</u> 4,450 <span>/ por noche</span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
+                        <div class="single-room mb-50">
+                            <div class="room-img">
+                               <a href="rooms.html"><img src="imagenes hotel/cabana3.JPEG" alt="Cabaña Deluxe"></a>
+                            </div>
+                            <div class="room-caption">
+                                <h3><a href="rooms.html">Cabaña Deluxe Vista Al Bosque</a></h3>
+                                <div class="per-night">
+                                    <span><u>Lps.</u> 4,950 <span>/ por noche</span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
+                        <div class="single-room mb-50">
+                            <div class="room-img">
+                                <a href="rooms.html"><img src="habitacion.JPG" alt="Cabaña Premium"></a>
+                            </div>
+                            <div class="room-caption">
+                                <h3><a href="rooms.html">Cabaña Premium De Lujo</a></h3>
+                                <div class="per-night">
+                                    <span><u>Lps.</u> 5,450 <span>/ por noche</span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
+                        <div class="single-room mb-50">
+                            <div class="room-img">
+                                <a href="rooms.html"><img src="suite.jpg" alt="Suite Cabaña"></a>
+                            </div>
+                            <div class="room-caption">
+                                <h3><a href="rooms.html">Suite Cabaña Con Jacuzzi</a></h3>
+                                <div class="per-night">
+                                    <span><u>Lps.</u> 3,950 <span>/ por noche</span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
+                        <div class="single-room mb-50">
+                            <div class="room-img">
+                               <a href="rooms.html"><img src="cabanapre.jpg" alt="Cabaña VIP"></a>
+                            </div>
+                            <div class="room-caption">
+                                <h3><a href="rooms.html">Cabaña Presidencial VIP</a></h3>
+                                <div class="per-night">
+                                    <span><u>Lps.</u> 6,200 <span>/ por noche</span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="room-btn pt-70">
+                        <a href="rooms.html" class="btn view-btn1">Ver Más Cabañas <i class="ti-angle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Restaurante y Piscina -->
+        <div class="dining-area dining-padding-top">
+            <div class="single-dining-area left-img wow fadeInLeft" data-wow-duration="1s">
+                <div class="container">
+                    <div class="row justify-content-end">
+                        <div class="col-lg-8 col-md-8">
+                            <div class="dining-caption">
+                                <span>Nuestro Restaurante</span>
+                                <h3>Comidas & Bebidas</h3>
+                                <p>Degusta de nuestra exquisita oferta gastronómica local e internacional,<br> preparada por chefs expertos con ingredientes frescos y autóctonos.</p>
+                                <a href="services.html" class="btn border-btn">Conoce Más <i class="ti-angle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <div class="single-dining-area right-img wow fadeInRight" data-wow-duration="1s">
+                <div class="container">
+                    <div class="row justify-content-start">
+                        <div class="col-lg-8 col-md-8">
+                            <div class="dining-caption text-right">
+                                <span>Nuestra Piscina</span>
+                                <h3>Piscina & Relajación</h3>
+                                <p>Disfruta de nuestras piscinas al aire libre en un ambiente relajante,<br> perfecto para compartir en familia o tomar un tiempo de descanso único.</p>
+                                <a href="services.html" class="btn border-btn">Conoce Más <i class="ti-angle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+
+        <!-- Testimonios -->
+        <div class="testimonial-area testimonial-padding">
+            <div class="container">
+               <div class="row justify-content-center">
+                    <div class="col-xl-9 col-lg-9 col-md-9">
+                        <div class="h1-testimonial-active">
+                            <div class="single-testimonial pt-65">
+                                <div class="font-back-tittle mb-105">
+                                    <div class="archivment-front">
+                                        <img src="assets/img/logo/testimonial.png" alt="Testimonio">
+                                    </div>
+                                    <h3 class="archivment-back">Testimonios</h3>
+                                </div>
+                                <div class="testimonial-caption text-center">
+                                    <p>Una experiencia inigualable. La tranquilidad del lugar, la excelente atención y el confort de las cabañas superaron totalmente nuestras expectativas.</p>
+                                    <div class="testimonial-ratting">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="rattiong-caption">
+                                        <span>Carlos Mendoza, <span>Cliente Frecuente</span></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="single-testimonial pt-65">
+                                <div class="font-back-tittle mb-105">
+                                    <div class="archivment-front">
+                                        <img src="assets/img/logo/testimonial.png" alt="Testimonio">
+                                    </div>
+                                    <h3 class="archivment-back">Testimonios</h3>
+                                </div>
+                                <div class="testimonial-caption text-center">
+                                    <p>El mejor destino para desconectarse y disfrutar de la naturaleza con todas las comodidades de un hotel de lujo. ¡Recomendado 100%!</p>
+                                    <div class="testimonial-ratting">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="rattiong-caption">
+                                        <span>Sofía Guerrero, <span>Huésped</span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+               </div>
+            </div>
+        </div>
+
+        <!-- Blog -->
+       <div class="blog-area blog-padding">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-8">
+                        <div class="font-back-tittle mb-50 text-center wow fadeInUp" data-wow-duration="1s">
+                            <div class="archivment-front">
+                                <h3>Nuestro Blog</h3>
+                            </div>
+                            <h3 class="archivment-back">Noticias</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
+                        <div class="single-blog mb-30">
+                            <div class="blog-img">
+                                <a href="single-blog.html"><img src="imagenes hotel/experiencia 1.JPG" alt="Blog 1"></a>
+                            </div>
+                            <div class="blog-caption">
+                                <div class="blog-cap-top d-flex justify-content-between mb-40">
+                                    <span>Noticias</span>
+                                    <ul><li>por <a href="#"> Admin</a></li></ul>
+                                </div>
+                                <div class="blog-cap-mid">
+                                    <p><a href="single-blog.html">5 Consejos sencillos para obtener un servicio de hotel estelar donde sea que estés</a></p>
+                                </div>
+                                <div class="blog-cap-bottom d-flex justify-content-between">
+                                    <span>06 Oct, 2026</span>
+                                    <span><img src="assets/img/our_blog/blog-comments-icon.jpg" alt="Icono"> 3</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
+                        <div class="single-blog mb-30">
+                            <div class="blog-img">
+                               <a href="single-blog.html"><img src="imagenes hotel/experiencia 2.JPG" alt="Blog 2"></a>
+                            </div>
+                            <div class="blog-caption">
+                                <div class="blog-cap-top d-flex justify-content-between mb-40">
+                                    <span>Noticias</span>
+                                    <ul><li>por <a href="#"> Admin</a></li></ul>
+                                </div>
+                                <div class="blog-cap-mid">
+                                    <p><a href="single-blog.html">Descubre las mejores rutas turísticas y ecológicas cerca de nuestro resort</a></p>
+                                </div>
+                                <div class="blog-cap-bottom d-flex justify-content-between">
+                                    <span>06 Oct, 2026</span>
+                                    <span><img src="assets/img/our_blog/blog-comments-icon.jpg" alt="Icono"> 3</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
+                        <div class="single-blog mb-30">
+                            <div class="blog-img">
+                                <a href="single-blog.html"><img src="imagenes hotel/cena tipica.JPG" alt="Blog 3"></a>
+                            </div>
+                            <div class="blog-caption">
+                                <div class="blog-cap-top d-flex justify-content-between mb-40">
+                                    <span>Noticias</span>
+                                    <ul><li>por <a href="#"> Admin</a></li></ul>
+                                </div>
+                                <div class="blog-cap-mid">
+                                    <p><a href="single-blog.html">Platillos típicos e imperdibles que debes probar en tu próxima visita</a></p>
+                                </div>
+                                <div class="blog-cap-bottom d-flex justify-content-between">
+                                    <span>06 Oct, 2026</span>
+                                    <span><img src="assets/img/our_blog/blog-comments-icon.jpg" alt="Icono"> 3</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       </div>
+
+        <!-- Galería -->
+        <div class="gallery-area fix">
+            <div class="container-fluid p-0">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="gallery-active owl-carousel">
+                            <div class="gallery-img">
+                                <a href="#"><img src="imagenes hotel/ave.JPG" alt="Avistamiento de aves"></a>
+                            </div>
+                            <div class="gallery-img">
+                                <a href="#"><img src="imagenes hotel/catarata.JPG" alt="Cataratas"></a>
+                            </div>
+                            <div class="gallery-img">
+                                <a href="#"><img src="imagenes hotel/senderismo.JPG" alt="Senderismo"></a>
+                            </div>
+                            <div class="gallery-img">
+                                <a href="#"><img src="imagenes hotel/spa.JPEG" alt="Spa"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+       <div class="footer-area black-bg footer-padding">
+           <div class="container">
+               <div class="row d-flex justify-content-between">
+                   <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                      <div class="single-footer-caption mb-30">
+                         <div class="footer-logo">
+                           <a href="index.html"><img src="imagenes hotel/hotel.JPG" alt="Logo Footer" style="max-height: 40px;"></a>
+                         </div>
+                         <div class="footer-social footer-social2">
+                             <a href="#"><i class="fab fa-facebook-f"></i></a>
+                             <a href="#"><i class="fab fa-twitter"></i></a>
+                             <a href="#"><i class="fas fa-globe"></i></a>
+                             <a href="#"><i class="fab fa-behance"></i></a>
+                         </div>
+                         <div class="footer-pera">
+                              <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos los derechos reservados | Diseñado con estilo elegante</p>
+                         </div>
+                      </div>
+                   </div>
+                   <div class="col-xl-3 col-lg-3 col-md-3 col-sm-5">
+                       <div class="single-footer-caption mb-30">
+                           <div class="footer-tittle">
+                               <h4>Enlaces Rápidos</h4>
+                               <ul>
+                                   <li><a href="about.html">Sobre Nosotros</a></li>
+                                   <li><a href="rooms.html">Nuestras Cabañas</a></li>
+                                   <li><a href="services.html">Servicios y Piscina</a></li>
+                                   <li><a href="contact.html">Contacto</a></li>
+                               </ul>
+                           </div>
+                       </div>
+                   </div>
+                   <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
+                       <div class="single-footer-caption mb-30">
+                           <div class="footer-tittle">
+                               <h4>Reservaciones</h4>
+                               <ul>
+                                   <li><a href="#">Tel: +504 9999-9999</a></li>
+                                   <li><a href="#">Skype: hotelbooking</a></li>
+                                   <li><a href="#">reservaciones@hotel.com</a></li>
+                               </ul>
+                           </div>
+                       </div>
+                   </div>
+                   <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
+                       <div class="single-footer-caption mb-30">
+                           <div class="footer-tittle">
+                               <h4>Nuestra Ubicación</h4>
+                               <ul>
+                                   <li><a href="#">Pico Bonito, La Ceiba</a></li>
+                                   <li><a href="#">Honduras, Centroamérica</a></li>
+                               </ul>
+                                <div class="footer-form">
+                                    <div id="mc_embed_signup">
+                                        <form target="_blank" action="#" method="get" class="subscribe_form relative mail_part">
+                                            <input type="email" name="email" id="newsletter-form-email" placeholder="Correo electrónico" class="placeholder hide-on-focus" onfocus="this.placeholder = ''" onblur="this.placeholder = ' Correo electrónico '">
+                                            <div class="form-icon">
+                                              <button type="submit" name="submit" id="newsletter-submit" class="email_icon newsletter-submit button-contactForm"><img src="assets/img/logo/form-iocn.jpg" alt="Icono"></button>
+                                            </div>
+                                            <div class="mt-10 info"></div>
+                                        </form>
+                                    </div>
+                                </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </footer>
+
+    <!-- Scripts de Funcionalidad y Animaciones -->
+    <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="./assets/js/popper.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/jquery.slicknav.min.js"></script>
+    <script src="./assets/js/owl.carousel.min.js"></script>
+    <script src="./assets/js/slick.min.js"></script>
+    <script src="./assets/js/gijgo.min.js"></script>
+    <script src="./assets/js/wow.min.js"></script>
+    <script src="./assets/js/animated.headline.js"></script>
+    <script src="./assets/js/jquery.magnific-popup.js"></script>
+    <script src="./assets/js/jquery.scrollUp.min.js"></script>
+    <script src="./assets/js/jquery.nice-select.min.js"></script>
+    <script src="./assets/js/jquery.sticky.js"></script>
+    <script src="./assets/js/contact.js"></script>
+    <script src="./assets/js/jquery.form.js"></script>
+    <script src="./assets/js/jquery.validate.min.js"></script>
+    <script src="./assets/js/mail-script.js"></script>
+    <script src="./assets/js/jquery.ajaxchimp.min.js"></script>
+    <script src="./assets/js/plugins.js"></script>
+    <script src="./assets/js/main.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            new WOW().init();
+        });
+    </script>
+</body>
+</html>
